@@ -1,0 +1,13 @@
+D:\GITFILES\Library\Library\bin\Debug\netcoreapp2.0\Library.deps.json
+D:\GITFILES\Library\Library\bin\Debug\netcoreapp2.0\Library.runtimeconfig.json
+D:\GITFILES\Library\Library\bin\Debug\netcoreapp2.0\Library.runtimeconfig.dev.json
+D:\GITFILES\Library\Library\bin\Debug\netcoreapp2.0\Library.dll
+D:\GITFILES\Library\Library\bin\Debug\netcoreapp2.0\Library.pdb
+D:\GITFILES\Library\Library\obj\Debug\netcoreapp2.0\Library.csprojResolveAssemblyReference.cache
+D:\GITFILES\Library\Library\obj\Debug\netcoreapp2.0\Library.csproj.CoreCompileInputs.cache
+D:\GITFILES\Library\Library\obj\Debug\netcoreapp2.0\Library.AssemblyInfoInputs.cache
+D:\GITFILES\Library\Library\obj\Debug\netcoreapp2.0\Library.AssemblyInfo.cs
+D:\GITFILES\Library\Library\obj\Debug\netcoreapp2.0\Library.dll
+D:\GITFILES\Library\Library\obj\Debug\netcoreapp2.0\Library.pdb
+D:\GITFILES\Library\Library\bin\Debug\netcoreapp2.0\LibraryData.dll
+D:\GITFILES\Library\Library\bin\Debug\netcoreapp2.0\LibraryData.pdb
