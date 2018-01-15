@@ -3402,11 +3402,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\GITFILES\\Library\\LibraryData\\LibraryData.csproj",
+      "projectUniqueName": "C:\\Users\\Ernesto Murillo\\Desktop\\Side Projects\\LMS\\LibraryData\\LibraryData.csproj",
       "projectName": "LibraryData",
-      "projectPath": "D:\\GITFILES\\Library\\LibraryData\\LibraryData.csproj",
+      "projectPath": "C:\\Users\\Ernesto Murillo\\Desktop\\Side Projects\\LMS\\LibraryData\\LibraryData.csproj",
       "packagesPath": "C:\\Users\\Ernesto Murillo\\.nuget\\packages\\",
-      "outputPath": "D:\\GITFILES\\Library\\LibraryData\\obj\\",
+      "outputPath": "C:\\Users\\Ernesto Murillo\\Desktop\\Side Projects\\LMS\\LibraryData\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

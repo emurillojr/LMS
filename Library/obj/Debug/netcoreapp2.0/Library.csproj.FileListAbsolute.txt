@@ -11,3 +11,16 @@ D:\GITFILES\Library\Library\obj\Debug\netcoreapp2.0\Library.dll
 D:\GITFILES\Library\Library\obj\Debug\netcoreapp2.0\Library.pdb
 D:\GITFILES\Library\Library\bin\Debug\netcoreapp2.0\LibraryData.dll
 D:\GITFILES\Library\Library\bin\Debug\netcoreapp2.0\LibraryData.pdb
+C:\Users\Ernesto Murillo\Desktop\Side Projects\LMS\Library\bin\Debug\netcoreapp2.0\Library.deps.json
+C:\Users\Ernesto Murillo\Desktop\Side Projects\LMS\Library\bin\Debug\netcoreapp2.0\Library.runtimeconfig.json
+C:\Users\Ernesto Murillo\Desktop\Side Projects\LMS\Library\bin\Debug\netcoreapp2.0\Library.runtimeconfig.dev.json
+C:\Users\Ernesto Murillo\Desktop\Side Projects\LMS\Library\bin\Debug\netcoreapp2.0\Library.dll
+C:\Users\Ernesto Murillo\Desktop\Side Projects\LMS\Library\bin\Debug\netcoreapp2.0\Library.pdb
+C:\Users\Ernesto Murillo\Desktop\Side Projects\LMS\Library\bin\Debug\netcoreapp2.0\LibraryData.dll
+C:\Users\Ernesto Murillo\Desktop\Side Projects\LMS\Library\bin\Debug\netcoreapp2.0\LibraryData.pdb
+C:\Users\Ernesto Murillo\Desktop\Side Projects\LMS\Library\obj\Debug\netcoreapp2.0\Library.csprojResolveAssemblyReference.cache
+C:\Users\Ernesto Murillo\Desktop\Side Projects\LMS\Library\obj\Debug\netcoreapp2.0\Library.csproj.CoreCompileInputs.cache
+C:\Users\Ernesto Murillo\Desktop\Side Projects\LMS\Library\obj\Debug\netcoreapp2.0\Library.AssemblyInfoInputs.cache
+C:\Users\Ernesto Murillo\Desktop\Side Projects\LMS\Library\obj\Debug\netcoreapp2.0\Library.AssemblyInfo.cs
+C:\Users\Ernesto Murillo\Desktop\Side Projects\LMS\Library\obj\Debug\netcoreapp2.0\Library.dll
+C:\Users\Ernesto Murillo\Desktop\Side Projects\LMS\Library\obj\Debug\netcoreapp2.0\Library.pdb

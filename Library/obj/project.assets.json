@@ -12567,11 +12567,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\GITFILES\\Library\\Library\\Library.csproj",
+      "projectUniqueName": "C:\\Users\\Ernesto Murillo\\Desktop\\Side Projects\\LMS\\Library\\Library.csproj",
       "projectName": "Library",
-      "projectPath": "D:\\GITFILES\\Library\\Library\\Library.csproj",
+      "projectPath": "C:\\Users\\Ernesto Murillo\\Desktop\\Side Projects\\LMS\\Library\\Library.csproj",
       "packagesPath": "C:\\Users\\Ernesto Murillo\\.nuget\\packages\\",
-      "outputPath": "D:\\GITFILES\\Library\\Library\\obj\\",
+      "outputPath": "C:\\Users\\Ernesto Murillo\\Desktop\\Side Projects\\LMS\\Library\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12590,8 +12590,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "D:\\GITFILES\\Library\\LibraryData\\LibraryData.csproj": {
-              "projectPath": "D:\\GITFILES\\Library\\LibraryData\\LibraryData.csproj"
+            "C:\\Users\\Ernesto Murillo\\Desktop\\Side Projects\\LMS\\LibraryData\\LibraryData.csproj": {
+              "projectPath": "C:\\Users\\Ernesto Murillo\\Desktop\\Side Projects\\LMS\\LibraryData\\LibraryData.csproj"
             }
           }
         }
