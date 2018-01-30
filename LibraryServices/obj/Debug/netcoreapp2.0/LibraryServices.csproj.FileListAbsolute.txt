@@ -1,0 +1,11 @@
+C:\Users\murilloe\Desktop\GIT Personal\LMS\LibraryServices\bin\Debug\netcoreapp2.0\LibraryServices.deps.json
+C:\Users\murilloe\Desktop\GIT Personal\LMS\LibraryServices\bin\Debug\netcoreapp2.0\LibraryServices.dll
+C:\Users\murilloe\Desktop\GIT Personal\LMS\LibraryServices\bin\Debug\netcoreapp2.0\LibraryServices.pdb
+C:\Users\murilloe\Desktop\GIT Personal\LMS\LibraryServices\bin\Debug\netcoreapp2.0\LibraryData.dll
+C:\Users\murilloe\Desktop\GIT Personal\LMS\LibraryServices\bin\Debug\netcoreapp2.0\LibraryData.pdb
+C:\Users\murilloe\Desktop\GIT Personal\LMS\LibraryServices\obj\Debug\netcoreapp2.0\LibraryServices.csprojResolveAssemblyReference.cache
+C:\Users\murilloe\Desktop\GIT Personal\LMS\LibraryServices\obj\Debug\netcoreapp2.0\LibraryServices.csproj.CoreCompileInputs.cache
+C:\Users\murilloe\Desktop\GIT Personal\LMS\LibraryServices\obj\Debug\netcoreapp2.0\LibraryServices.AssemblyInfoInputs.cache
+C:\Users\murilloe\Desktop\GIT Personal\LMS\LibraryServices\obj\Debug\netcoreapp2.0\LibraryServices.AssemblyInfo.cs
+C:\Users\murilloe\Desktop\GIT Personal\LMS\LibraryServices\obj\Debug\netcoreapp2.0\LibraryServices.dll
+C:\Users\murilloe\Desktop\GIT Personal\LMS\LibraryServices\obj\Debug\netcoreapp2.0\LibraryServices.pdb
