@@ -1,27 +1,24 @@
-﻿using Library.Models.Catalog;
-using LibraryData;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Library.Models.Catalog; // AssetDetailModel
+using LibraryData;  // ILibraryAsset
+using Microsoft.AspNetCore.Mvc; // Controller
+using System.Linq;  // .Select
 
 namespace Library.Controllers
 {
-    public class CatalogController : Controller
+    public class CatalogController : Controller // inherit from Controller base class
     {
         private ILibraryAsset _assets;
-        public CatalogController(ILibraryAsset assets)
+        public CatalogController(ILibraryAsset assets) // contructor  
         {
             _assets = assets;
         }
 
         public IActionResult Index()
         {
-            var assetModels = _assets.GetAll();
+            var assetModels = _assets.GetAll();  // list of entire catalog of library assets
 
             var listingResult = assetModels
-                .Select(result => new AssetIndexListingModel
+                .Select(result => new AssetIndexListingModel  
                 {
                     Id = result.Id,
                     ImageUrl = result.ImageUrl,
