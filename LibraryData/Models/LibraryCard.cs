@@ -8,10 +8,10 @@ namespace LibraryData.Models
     {
         public int Id { get; set; }
 
-        public decimal Fees { get; set; }
+        public decimal Fees { get; set; } // overdue fees
 
-        public DateTime Created { get; set; }
+        public DateTime Created { get; set; } // created date
 
-        public virtual IEnumerable<Checkout> Checkouts { get; set; }
+        public virtual IEnumerable<Checkout> Checkouts { get; set; } // collection of checkouts for library card
     }
 }

@@ -18,10 +18,10 @@ namespace LibraryData.Models
         [Required]
         public string Telephone { get; set; }
         public string Description { get; set; }
-        public DateTime OpenDate { get; set; }
+        public DateTime OpenDate { get; set; } // when branch was founded
 
-        public virtual IEnumerable<Patron> Patrons { get; set; }
-        public virtual IEnumerable<LibraryAsset> LibraryAsset { get; set; }
+        public virtual IEnumerable<Patron> Patrons { get; set; } // collection that belong to that library branch
+        public virtual IEnumerable<LibraryAsset> LibraryAsset { get; set; } // collection that belong to that library branch
 
         public string ImageUrl { get; set; }
     }

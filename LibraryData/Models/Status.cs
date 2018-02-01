@@ -2,7 +2,7 @@
 
 namespace LibraryData.Models
 {
-    public class Status
+    public class Status // for books, videos  for the status of them 
     {
         public int Id { get; set; }
 

@@ -8,9 +8,9 @@ namespace LibraryData.Models
         public int Id { get; set; }
 
         [Required]
-        public LibraryAsset LibraryAsset { get; set; }
-        public LibraryCard LibraryCard { get; set; }
-        public DateTime Since { get; set; }
-        public DateTime Until { get; set; }
+        public LibraryAsset LibraryAsset { get; set; }  // book or video
+        public LibraryCard LibraryCard { get; set; } // one to one relationship with patron
+        public DateTime Since { get; set; } // when asset was checked out / due
+        public DateTime Until { get; set; } // when asset was checked out / due
     }
 }

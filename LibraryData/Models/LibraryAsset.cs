@@ -2,7 +2,7 @@
 
 namespace LibraryData.Models
 {
-    public abstract class LibraryAsset
+    public abstract class LibraryAsset // books videos etc
     {
         public int Id { get; set; }
 
@@ -22,6 +22,6 @@ namespace LibraryData.Models
 
         public int NumberOfCopies { get; set; }
 
-        public virtual LibraryBranch Location { get; set; }
+        public virtual LibraryBranch Location { get; set; }  // foriegn key to Library asset in a branch
     }
 }

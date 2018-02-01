@@ -2,7 +2,7 @@
 
 namespace LibraryData.Models
 {
-    public class Book : LibraryAsset
+    public class Book : LibraryAsset   // book is a library asset
     {
         [Required]
         public string ISBN { get; set; }

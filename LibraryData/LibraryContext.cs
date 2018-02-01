@@ -1,12 +1,13 @@
-﻿using LibraryData.Models;
+﻿using LibraryData.Models; // access to objects
 using Microsoft.EntityFrameworkCore;
 
 namespace LibraryData
 {
     public class LibraryContext: DbContext
     {
-        public LibraryContext(DbContextOptions options) : base(options) { }
-
+        // constructor
+        public LibraryContext(DbContextOptions options) : base(options) { } // pass to base class constructor
+        // added DbSet for all the tables
         public DbSet<Book> Books { get; set; }
         public DbSet<Video> Videos { get; set; }
         public DbSet<Checkout> Checkouts { get; set; }
