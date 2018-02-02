@@ -36,9 +36,9 @@ namespace Library.Controllers
             return View(model);
         }
 
-        public IActionResult Detail(int id)
+        public IActionResult Detail(int id)  // localhost:#####/Catalog/Detail/123    controller / Action / Id
         {
-            var asset = _assets.GetById(id);
+            var asset = _assets.GetById(id);  // returns asset from database
 
             var model = new AssetDetailModel
             {
