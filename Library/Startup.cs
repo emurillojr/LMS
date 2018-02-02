@@ -1,4 +1,5 @@
 ﻿using LibraryData; // added reference
+using LibraryData.Models; // added reference
 using LibraryServices;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -24,6 +25,7 @@ namespace Library
             services.AddMvc();
             services.AddSingleton(Configuration);
             services.AddScoped<ILibraryAsset, LibraryAssetService>();
+            services.AddScoped<ICheckout, CheckoutService>();
 
             services.AddDbContext<LibraryContext>(options
                 => options.UseSqlServer(Configuration.GetConnectionString("LibraryConnection")));
