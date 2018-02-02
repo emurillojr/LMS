@@ -48,10 +48,10 @@ namespace Library.Controllers
                 Cost = asset.Cost,
                 Status = asset.Status.Name,
                 ImageUrl = asset.ImageUrl,
-                AuthorOrDirector = _assets.GetAuthorOrDirector(id),
-                CurrentLocation = _assets.GetCurrentLocation(id).Name,
-                DeweyCallNumber = _assets.GetDeweyIndex(id),
-                ISBN = _assets.GetIsbn(id)
+                AuthorOrDirector = _assets.GetAuthorOrDirector(id), // use Library Asset Service to get AuthorOrDirector
+                CurrentLocation = _assets.GetCurrentLocation(id).Name, // use Library Asset Service to get CurrentLocation name
+                DeweyCallNumber = _assets.GetDeweyIndex(id),  // use Library Asset Service to get GetDeweyIndex
+                ISBN = _assets.GetIsbn(id) // use Library Asset Service to get ISBN
             };
 
             return View(model);

@@ -1,8 +1,5 @@
-﻿using LibraryData.Models;
-using System;
+﻿using LibraryData.Models;  // Checkout
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Library.Models.Catalog
 {
@@ -15,14 +12,14 @@ namespace Library.Models.Catalog
         public int Year { get; set; }
         public string ISBN { get; set; }
         public string DeweyCallNumber { get; set; }
-        public string Status { get; set; } // display for checked out, lost, or avaialble
+        public string Status { get; set; } // display for checked out, lost, or available
         public decimal Cost { get; set; }
         public string CurrentLocation { get; set; }
         public string ImageUrl { get; set; }
         public string PatronName { get; set; }
-        public Checkout LatestCheckout { get; set; } 
-        public IEnumerable<CheckoutHistory> CheckoutHistory { get; set; } // set of checkout all patrons placed
-        public IEnumerable<AssetHoldModel> CurrentHolds { get; set; }
+        public Checkout LatestCheckout { get; set; } // checkout object
+        public IEnumerable<CheckoutHistory> CheckoutHistory { get; set; } // set of checkout all patrons have placed on asset
+        public IEnumerable<AssetHoldModel> CurrentHolds { get; set; } // call current holds
     }
     public class AssetHoldModel
     {
