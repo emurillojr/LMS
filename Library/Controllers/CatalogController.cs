@@ -1,4 +1,5 @@
 ﻿using Library.Models.Catalog; // AssetDetailModel
+using Library.Models.Checkout;
 using LibraryData;  // ILibraryAsset
 using Microsoft.AspNetCore.Mvc; // Controller
 using System.Linq;  // .Select
@@ -66,6 +67,22 @@ namespace Library.Controllers
                 LatestCheckout = _checkouts.GetLatestCheckout(id),
                 PatronName = _checkouts.GetCurrentCheckoutPatron(id),
                 CurrentHolds = currentHolds
+            };
+
+            return View(model);
+        }
+
+        public IActionResult Checkout(int id)
+        {
+            var asset = _assets.GetById(id);  // returns asset from database
+
+            var model = new CheckoutModel
+            {
+                AssetId = id,
+                ImageUrl = asset.ImageUrl,
+                Title = asset.Title,
+                LibraryCardId = "",
+                IsCheckedOut = _checkouts.IsCheckedOut(id)
             };
 
             return View(model);
