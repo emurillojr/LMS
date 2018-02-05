@@ -8,9 +8,11 @@ namespace Library.Controllers
     public class CatalogController : Controller // inherit from Controller base class
     {
         private ILibraryAsset _assets;
-        public CatalogController(ILibraryAsset assets) // contructor  
+        private ICheckout _checkouts;
+        public CatalogController(ILibraryAsset assets, ICheckout checkouts) // contructor  
         {
             _assets = assets;
+            _checkouts = checkouts;
         }
 
         public IActionResult Index()
@@ -18,7 +20,7 @@ namespace Library.Controllers
             var assetModels = _assets.GetAll();  // list of entire catalog of library assets
 
             var listingResult = assetModels
-                .Select(result => new AssetIndexListingModel  
+                .Select(result => new AssetIndexListingModel
                 {
                     Id = result.Id,
                     ImageUrl = result.ImageUrl,
@@ -40,10 +42,18 @@ namespace Library.Controllers
         {
             var asset = _assets.GetById(id);  // returns asset from database
 
+            var currentHolds = _checkouts.GetCurrentHolds(id)
+                .Select(a => new AssetHoldModel
+                {
+                    HoldPlaced = _checkouts.GetCurrentHoldPlaced(a.Id).ToString("d"),
+                    PatronName = _checkouts.GetCurrentHoldPatronName(a.Id)
+                });
+
             var model = new AssetDetailModel
             {
                 AssetId = id,
                 Title = asset.Title,
+                Type = _assets.GetType(id),
                 Year = asset.Year,
                 Cost = asset.Cost,
                 Status = asset.Status.Name,
@@ -51,7 +61,11 @@ namespace Library.Controllers
                 AuthorOrDirector = _assets.GetAuthorOrDirector(id), // use Library Asset Service to get AuthorOrDirector
                 CurrentLocation = _assets.GetCurrentLocation(id).Name, // use Library Asset Service to get CurrentLocation name
                 DeweyCallNumber = _assets.GetDeweyIndex(id),  // use Library Asset Service to get GetDeweyIndex
-                ISBN = _assets.GetIsbn(id) // use Library Asset Service to get ISBN
+                CheckoutHistory = _checkouts.GetCheckoutHistory(id),
+                ISBN = _assets.GetIsbn(id), // use Library Asset Service to get ISBN
+                LatestCheckout = _checkouts.GetLatestCheckout(id),
+                PatronName = _checkouts.GetCurrentCheckoutPatron(id),
+                CurrentHolds = currentHolds
             };
 
             return View(model);
