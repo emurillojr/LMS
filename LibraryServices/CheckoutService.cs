@@ -109,7 +109,7 @@ namespace LibraryServices
             _context.SaveChanges();
         }
 
-        public void CheckInItem(int assetId, int libraryCardId)
+        public void CheckInItem(int assetId)
         {
             var now = DateTime.Now;
 
