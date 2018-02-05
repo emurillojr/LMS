@@ -1,8 +1,9 @@
 ﻿using Library.Models.Catalog; // AssetDetailModel
-using Library.Models.Checkout;
+using Library.Models.CheckoutModels;
 using LibraryData;  // ILibraryAsset
 using Microsoft.AspNetCore.Mvc; // Controller
 using System.Linq;  // .Select
+using System.Collections.Generic;
 
 namespace Library.Controllers
 {
