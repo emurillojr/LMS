@@ -132,6 +132,7 @@ namespace LibraryServices
             if (currentHolds.Any())
             {
                 CheckoutToEarliestHold(assetId, currentHolds);
+                return;  // update status of asset to checkedout
             }
 
             // otherwise, update the item to available

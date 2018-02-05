@@ -22,14 +22,14 @@ namespace Library.Controllers
             var assetModels = _assets.GetAll();  // list of entire catalog of library assets
 
             var listingResult = assetModels
-                .Select(result => new AssetIndexListingModel
+                .Select(a => new AssetIndexListingModel
                 {
-                    Id = result.Id,
-                    ImageUrl = result.ImageUrl,
-                    AuthorOrDirector = _assets.GetAuthorOrDirector(result.Id),
-                    DeweyCallNumber = _assets.GetDeweyIndex(result.Id),
-                    Title = result.Title,
-                    Type = _assets.GetType(result.Id)
+                    Id = a.Id,
+                    ImageUrl = a.ImageUrl,
+                    AuthorOrDirector = _assets.GetAuthorOrDirector(a.Id),
+                    DeweyCallNumber = _assets.GetDeweyIndex(a.Id),
+                    Title = a.Title,
+                    Type = _assets.GetType(a.Id)
                 });
 
             var model = new AssetIndexModel()
