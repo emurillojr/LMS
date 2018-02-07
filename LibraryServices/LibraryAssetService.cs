@@ -8,7 +8,7 @@ namespace LibraryServices
 {
     public class LibraryAssetService : ILibraryAsset // implement interface
     {
-        private LibraryContext _context;
+        private LibraryContext _context; // // reference to DBContext
         public LibraryAssetService(LibraryContext context) // constructor
         {
             _context = context;

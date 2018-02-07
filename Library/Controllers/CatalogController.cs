@@ -139,10 +139,5 @@ namespace Library.Controllers
             _checkouts.PlaceHold(assetId, libraryCardId);
             return RedirectToAction("Detail", new { id = assetId });
         }
-
-
-
-
-
     }
 }

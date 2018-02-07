@@ -7,7 +7,7 @@ namespace LibraryData
     {
         IEnumerable<LibraryAsset> GetAll(); // returns collection of all assets
         LibraryAsset GetById(int id); // return assset by id
-        void Add(LibraryAsset newAsset); // add an asset to data set 
+        void Add(LibraryAsset newAsset); // add an asset to db
         string GetAuthorOrDirector(int id); 
         string GetDeweyIndex(int id);
         string GetType(int id);
