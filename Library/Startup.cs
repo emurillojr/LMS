@@ -1,4 +1,4 @@
-﻿using LibraryData; // added reference
+﻿using LibraryData; // added reference LibraryData project to Library
 using LibraryData.Models; // added reference
 using LibraryServices;
 using Microsoft.AspNetCore.Builder;
@@ -24,11 +24,14 @@ namespace Library
             // add framework services
             services.AddMvc();
             services.AddSingleton(Configuration);
-            services.AddScoped<ILibraryAsset, LibraryAssetService>();
-            services.AddScoped<ICheckout, CheckoutService>();
+            services.AddScoped<ILibraryAsset, LibraryAssetService>(); //
+            services.AddScoped<ICheckout, CheckoutService>(); //
+            services.AddScoped<IPatron, PatronService>(); //
 
+            // added reference LibraryData project to Library
+            //add DBContect on service collection
             services.AddDbContext<LibraryContext>(options
-                => options.UseSqlServer(Configuration.GetConnectionString("LibraryConnection")));
+                => options.UseSqlServer(Configuration.GetConnectionString("LibraryConnection")));  // pass connection strong from appsetting.json
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,10 +49,11 @@ namespace Library
 
             app.UseStaticFiles();
 
+            // Routes  telling app how to do its routing
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "default",
+                    name: "default",  // default route  controller name / action result / id
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
         }

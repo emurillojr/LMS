@@ -1,20 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using LibraryData;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Library.Controllers
 {
-    public class PatronController : Controller
+    public class PatronController : Controller // inherit from Controller base class
     {
-        private IPatron _patron;
-
-        // create a constructor takes branchservice
-        public PatronController(IPatron patron)
+        private IPatron _patron;  
+                
+        public PatronController(IPatron patron)  // constructor
         {
-            // save branchService param off into a private field 
-            // to have access in the rest of the controller
             _patron = patron;
         }
 
