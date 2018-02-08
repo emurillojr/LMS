@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace LibraryData.Models
 {
-    public class CheckoutHistory // audit table for checked in / out
+    public class CheckoutHistory // audit table for when item is checked in / out
     {
         public int Id { get; set; }
 

@@ -22,6 +22,6 @@ namespace LibraryData.Models
 
         public int NumberOfCopies { get; set; }
 
-        public virtual LibraryBranch Location { get; set; }  // foriegn key to Library asset in a branch
+        public virtual LibraryBranch Location { get; set; }  // foriegn key relationship between Library asset in a certain branch
     }
 }

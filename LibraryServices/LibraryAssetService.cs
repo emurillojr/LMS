@@ -6,10 +6,11 @@ using System.Linq; // .Any . FirstOrDefault
 
 namespace LibraryServices
 {
-    public class LibraryAssetService : ILibraryAsset // implement interface
+    public class LibraryAssetService : ILibraryAsset // implement ILibraryAsset interface
     {
-        private LibraryContext _context; // // reference to DBContext
-        public LibraryAssetService(LibraryContext context) // constructor
+
+        private LibraryContext _context; // private reference to DBContext
+        public LibraryAssetService(LibraryContext context) // constructor that takes in context - gives access to all the methods on DBContext. 
         {
             _context = context;
         }
@@ -22,8 +23,8 @@ namespace LibraryServices
         public IEnumerable<LibraryAsset> GetAll()
         {
             return _context.LibraryAssets // returns collection of all assets in database
-                .Include(asset => asset.Status) // include in query status entity
-                .Include(asset => asset.Location); // include in query location entity
+                .Include(asset => asset.Status) // include entity - in query the status
+                .Include(asset => asset.Location); // include entity - in query the location
         }
 
         public LibraryAsset GetById(int id)

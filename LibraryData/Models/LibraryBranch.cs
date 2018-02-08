@@ -9,7 +9,7 @@ namespace LibraryData.Models
         public int Id { get; set; }
 
         [Required]
-        [StringLength(30)]
+        [StringLength(30)] // example of how to pass attributes
         public string Name { get; set; }
 
         [Required]
@@ -20,8 +20,8 @@ namespace LibraryData.Models
         public string Description { get; set; }
         public DateTime OpenDate { get; set; } // when branch was founded
 
-        public virtual IEnumerable<Patron> Patrons { get; set; } // collection that belong to that library branch
-        public virtual IEnumerable<LibraryAsset> LibraryAsset { get; set; } // collection that belong to that library branch
+        public virtual IEnumerable<Patron> Patrons { get; set; } // collection of patrons that belong to that library branch
+        public virtual IEnumerable<LibraryAsset> LibraryAsset { get; set; } // collection of Library assets that belong to that library branch
 
         public string ImageUrl { get; set; }
     }

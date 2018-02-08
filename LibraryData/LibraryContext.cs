@@ -3,13 +3,13 @@ using Microsoft.EntityFrameworkCore; // DbContext
 
 namespace LibraryData
 {
-    public class LibraryContext: DbContext  // abstract base class provided by entity framework, inherit DbContext 
+    public class LibraryContext: DbContext  // inherits from entity frameworks DbContext abstract base class
     {
-        // constructor
+        // constructor to pass Context Options to
         public LibraryContext(DbContextOptions options) : base(options) { } // take options and pass to base class constructor
-        // added DbSet for all the tables
-        public DbSet<Book> Books { get; set; }
-        public DbSet<Video> Videos { get; set; }
+        // added DbSet for all the tables / public DBSet for each of the entity models defined
+        public DbSet<Book> Books { get; set; } // not a table  - inside / part of LibraryAsset since it inherits that class
+        public DbSet<Video> Videos { get; set; } // not a table  - inside / part of LibraryAsset since it inherits that class
         public DbSet<Checkout> Checkouts { get; set; }
         public DbSet<CheckoutHistory> CheckoutHistories { get; set; }
         public DbSet<LibraryBranch> LibraryBranches { get; set; }
