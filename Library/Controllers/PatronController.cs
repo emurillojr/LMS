@@ -1,4 +1,6 @@
-﻿using LibraryData;
+﻿using Library.Models.Patron;
+using LibraryData;
+using LibraryData.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +9,8 @@ namespace Library.Controllers
 {
     public class PatronController : Controller // inherit from Controller base class
     {
-        private IPatron _patron;  
-                
+        private IPatron _patron;
+
         public PatronController(IPatron patron)  // constructor
         {
             _patron = patron;
@@ -16,17 +18,17 @@ namespace Library.Controllers
 
         public IActionResult Index()
         {
-            var allPatrons = _patron.GetAll();
+            var allPatrons = _patron.GetAll(); // store all patrons / collection 
 
             var patronModels = allPatrons
                 .Select(p => new PatronDetailModel
                 {
                     Id = p.Id,
-                    LastName = p.LastName,
                     FirstName = p.FirstName,
+                    LastName = p.LastName,
                     LibraryCardId = p.LibraryCard.Id,
                     OverdueFees = p.LibraryCard.Fees,
-                    HomeLibrary = p.HomeLibraryBranch.Name
+                    HomeLibraryBranch = p.HomeLibraryBranch.Name
                 }).ToList();
 
             var model = new PatronIndexModel()
@@ -46,34 +48,35 @@ namespace Library.Controllers
                 LastName = patron.LastName,
                 FirstName = patron.FirstName,
                 Address = patron.Address,
-                Gender = patron.Gender,
-                HomeLibrary = patron.HomeLibraryBranch.Name,
+                //Gender = patron.Gender,
+                HomeLibraryBranch = patron.HomeLibraryBranch.Name,
                 MemberSince = patron.LibraryCard.Created,
                 OverdueFees = patron.LibraryCard.Fees,
                 LibraryCardId = patron.LibraryCard.Id,
-                Telephone = patron.Telephone,
+                Telephone = patron.TelephoneNumber,
                 AssetsCheckedOut = _patron.GetCheckouts(id).ToList() ?? new List<Checkout>(),
                 CheckoutHistory = _patron.GetCheckoutHistory(id),
                 Holds = _patron.GetHolds(id)
             };
 
-            return View(model);
+                return View(model);
         }
 
-        public IActionResult Create()
-        {
-            return View();
-        }
+            //public IActionResult Create()
+            //{
+            //    return View();
+            //}
 
-        public IActionResult Edit()
-        {
-            return View();
-        }
+            //public IActionResult Edit()
+            //{
+            //    return View();
+            //}
 
-        public IActionResult Error()
-        {
-            return View();
-        }
+            //public IActionResult Error()
+            //{
+            //    return View();
+            //}
 
     }
 }
+

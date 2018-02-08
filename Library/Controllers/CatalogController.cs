@@ -4,6 +4,7 @@ using LibraryData;  // ILibraryAsset
 using Microsoft.AspNetCore.Mvc; // Controller
 using System.Linq;  // .Select
 using System.Collections.Generic;
+using LibraryData.Models;
 
 namespace Library.Controllers
 {
