@@ -4,18 +4,18 @@
     font-weight: bold;
 }
 
-.logo > a {
-color: #ddd;
-text-decoration: none;
-transition-duration: 0.5s;
-}
+    .logo > a {
+        color: #ddd;
+        text-decoration: none;
+        transition-duration: 0.5s;
+    }
 
-.logo > a:hover {
-    color: #fff;
-    transition: ease;
-    text-decoration: none;
-    transition-duration: 0.5s;
-}
+        .logo > a:hover {
+            color: #fff;
+            transition: ease;
+            text-decoration: none;
+            transition-duration: 0.5s;
+        }
 
 .page-content {
     padding: 20px;
@@ -75,13 +75,13 @@ transition-duration: 0.5s;
     font-size: 1.3em;
 }
 
-#catalogIndexTable td {
-    vertical-align: middle;
-}
+    #catalogIndexTable td {
+        vertical-align: middle;
+    }
 
-#catalogIndexTable tr:hover {
-    background-color: #eee;
-}
+    #catalogIndexTable tr:hover {
+        background-color: #eee;
+    }
 
 #patrons {
     background: url('/images/patron.jpeg') bottom left 15% no-repeat #555;
@@ -200,4 +200,10 @@ transition-duration: 0.5s;
 #patronNoFees {
     color: #2f6fc7;
     font-weight: bold;
+}
+
+.jumbotron img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
