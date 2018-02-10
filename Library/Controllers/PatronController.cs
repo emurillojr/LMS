@@ -18,7 +18,7 @@ namespace Library.Controllers
 
         public IActionResult Index()
         {
-            var allPatrons = _patron.GetAll(); // store all patrons / collection 
+            var allPatrons = _patron.GetAll(); // stores all patrons
 
             var patronModels = allPatrons
                 .Select(p => new PatronDetailModel
@@ -59,23 +59,23 @@ namespace Library.Controllers
                 Holds = _patron.GetHolds(id)
             };
 
-                return View(model);
+            return View(model);
         }
 
-            //public IActionResult Create()
-            //{
-            //    return View();
-            //}
+        //public IActionResult Create()
+        //{
+        //    return View();
+        //}
 
-            //public IActionResult Edit()
-            //{
-            //    return View();
-            //}
+        //public IActionResult Edit()
+        //{
+        //    return View();
+        //}
 
-            //public IActionResult Error()
-            //{
-            //    return View();
-            //}
+        //public IActionResult Error()
+        //{
+        //    return View();
+        //}
 
     }
 }

@@ -2,7 +2,7 @@
 
 namespace LibraryData.Models
 {
-    public abstract class LibraryAsset // books videos etc
+    public abstract class LibraryAsset // books videos mags etc
     {
         public int Id { get; set; }
 
@@ -17,11 +17,8 @@ namespace LibraryData.Models
 
         [Required]
         public decimal Cost { get; set; }
-
         public string ImageUrl { get; set; }
-
         public int NumberOfCopies { get; set; }
-
         public virtual LibraryBranch Location { get; set; }  // foriegn key relationship between Library asset in a certain branch
     }
 }

@@ -8,12 +8,12 @@ namespace LibraryServices
 {
     public class LibraryAssetService : ILibraryAsset // implement ILibraryAsset interface
     {
-
         private LibraryContext _context; // private reference to DBContext
         public LibraryAssetService(LibraryContext context) // constructor that takes in context - gives access to all the methods on DBContext. 
         {
             _context = context;
         }
+
         public void Add(LibraryAsset newAsset)
         {
             _context.Add(newAsset); // add an instance of a new asset

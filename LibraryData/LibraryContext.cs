@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore; // DbContext
 
 namespace LibraryData
 {
-    public class LibraryContext: DbContext  // inherits from entity frameworks DbContext abstract base class
+    public class LibraryContext : DbContext  // inherits from entity frameworks DbContext abstract base class
     {
         // constructor to pass Context Options to
         public LibraryContext(DbContextOptions options) : base(options) { } // take options and pass to base class constructor

@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace LibraryServices
 {
@@ -60,7 +59,6 @@ namespace LibraryServices
         public void MarkFound(int assetId)
         {
             var now = DateTime.Now;
-
             UpdateAssetStatus(assetId, "Available");
             RemoveExistingCheckouts(assetId);
             CloseExistingCheckoutHistory(assetId, now);

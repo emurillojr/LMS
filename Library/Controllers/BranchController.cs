@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Library.Controllers
 {
-    public class BranchController : Controller
+    public class BranchController : Controller // inherit from Controller base class
     {
         private ILibraryBranch _branch;
 

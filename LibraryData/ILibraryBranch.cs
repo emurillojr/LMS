@@ -1,7 +1,5 @@
 ﻿using LibraryData.Models;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace LibraryData
 {
@@ -17,6 +15,5 @@ namespace LibraryData
         //int GetAssetCount(IEnumerable<LibraryAsset> libraryAssets);
         //int GetPatronCount(IEnumerable<Patron> patrons);
         //decimal GetAssetsValue(int id);
-
     }
 }

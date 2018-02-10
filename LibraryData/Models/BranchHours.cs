@@ -2,9 +2,9 @@
 
 namespace LibraryData.Models
 {
-    public class BranchHours    // used to store the hours that branches are open
+    public class BranchHours    // used to store the hours that a branch is open
     {
-        public int Id { get; set; } 
+        public int Id { get; set; }
         public LibraryBranch Branch { get; set; }
 
         [Range(0, 6)]

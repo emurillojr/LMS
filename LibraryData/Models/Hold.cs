@@ -2,7 +2,7 @@
 
 namespace LibraryData.Models
 {
-    public class Hold 
+    public class Hold  // used to store a hold on a LibraryAsset
     {
         public int Id { get; set; }
         public virtual LibraryAsset LibraryAsset { get; set; } // Library asset for which a hold has been requested

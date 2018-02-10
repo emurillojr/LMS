@@ -14,6 +14,5 @@ namespace Library.Models.Catalog
         public string Type { get; set; }
         public string DeweyCallNumber { get; set; }
         public string NumberOfCopies { get; set; }
-
     }
 }

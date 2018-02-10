@@ -3,8 +3,6 @@ using Library.Models.CheckoutModels;
 using LibraryData;  // ILibraryAsset
 using Microsoft.AspNetCore.Mvc; // Controller
 using System.Linq;  // .Select
-using System.Collections.Generic;
-using LibraryData.Models;
 
 namespace Library.Controllers
 {
@@ -95,8 +93,6 @@ namespace Library.Controllers
             _checkouts.CheckInItem(id);
             return RedirectToAction("Detail", new { id = id });
         }
-
-
 
         public IActionResult Hold(int id)
         {

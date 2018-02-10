@@ -2,7 +2,7 @@
 
 namespace LibraryData.Models
 {
-    public class Status // for Library assets aka books, videos for the status of them  ex. hold, checked out, checked in
+    public class Status // used to store the status of a LibraryAsset ex. hold, checked out, checked in
     {
         public int Id { get; set; }
 
