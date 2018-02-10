@@ -28,6 +28,7 @@ namespace Library
             services.AddScoped<ICheckout, CheckoutService>(); //
             services.AddScoped<IPatron, PatronService>(); //
             services.AddScoped<ILibraryBranch, LibraryBranchService>(); //
+            services.AddScoped<IAll, AllService>();
 
             // added reference LibraryData project to Library
             //add DBContect on service collection
