@@ -1656,7 +1656,7 @@
       ]
     },
     "Remotion.Linq/2.1.1": {
-      "sha512": "IJn0BqkvwEDpP+2qjvci7n4/a9f7DhKESLWb2/uG4xQh3rTkGTBUz69bI4IivCoKkTFAqjXxYDZw2K/npohjsw==",
+      "sha512": "I3tzxTZN+aBByf1aaNtkTlC0kbwdxuvwa7iU5m2vxV4TLVOhZxhbz6nC3faIw7r8JVS9V2WHFQQzBEpcfvbgqA==",
       "type": "package",
       "path": "remotion.linq/2.1.1",
       "files": [
@@ -3411,7 +3411,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ernesto Murillo\\.nuget\\packages\\": {},
+    "C:\\Users\\murilloe\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -3420,18 +3421,20 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\GITFILES\\LMS\\LibraryServices\\LibraryServices.csproj",
+      "projectUniqueName": "C:\\Users\\murilloe\\Desktop\\GIT Personal\\LMS\\LibraryServices\\LibraryServices.csproj",
       "projectName": "LibraryServices",
-      "projectPath": "D:\\GITFILES\\LMS\\LibraryServices\\LibraryServices.csproj",
-      "packagesPath": "C:\\Users\\Ernesto Murillo\\.nuget\\packages\\",
-      "outputPath": "D:\\GITFILES\\LMS\\LibraryServices\\obj\\",
+      "projectPath": "C:\\Users\\murilloe\\Desktop\\GIT Personal\\LMS\\LibraryServices\\LibraryServices.csproj",
+      "packagesPath": "C:\\Users\\murilloe\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\murilloe\\Desktop\\GIT Personal\\LMS\\LibraryServices\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Ernesto Murillo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\murilloe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -3443,8 +3446,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "D:\\GITFILES\\LMS\\LibraryData\\LibraryData.csproj": {
-              "projectPath": "D:\\GITFILES\\LMS\\LibraryData\\LibraryData.csproj"
+            "C:\\Users\\murilloe\\Desktop\\GIT Personal\\LMS\\LibraryData\\LibraryData.csproj": {
+              "projectPath": "C:\\Users\\murilloe\\Desktop\\GIT Personal\\LMS\\LibraryData\\LibraryData.csproj"
             }
           }
         }
