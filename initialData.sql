@@ -1,32 +1,34 @@
 INSERT INTO 
 LibraryBranches(ImageUrl, [Address], [Name], Telephone, OpenDate, [Description]) 
 VALUES 
-('/images/branches/1.png', '88 Lakeshore Dr', 'Lake Shore Branch', '555-1234', '1975-05-13', 'The oldest library branch in Lakeview, the Lake Shore Branch was opened in 1975. Patrons of all ages enjoy the wide selection of literature available at Lake Shore library. The coffee shop is open during library hours of operation.'),
-('/images/branches/2.png', '123 Skyline Dr', 'Mountain View Branch', '555-1235', '1998-06-01', 'The Mountain View branch contains the largest collection of technical and language learning books in the region. This branch is within walking distance to the University campus'),
-('/images/branches/3.png', '540 Inventors Circle', 'Pleasant Hill Branch', '555-1236', '2017-09-20', 'The newest Lakeview Library System branch, Pleasant Hill has high-speed wireless access for all patrons and hosts Chess Club every Monday and Wednesday evening at 6 PM.');
+('/images/branches/1.png', '150 Empire Street', 'Providence Downtown Branch', '555-1234', '1875-05-13', 'The Downtown library branch was founded in 1875. The Central Library building at 225 Washington Street opened in 1900 and was constructed in a Renaissance style.'),
+('/images/branches/2.png', '90 Ives Street', 'Fox Point Branch', '555-4567', '1912-06-01', 'The Fox Point branch contains the community center built to serve the Boys and Girls Club. This branch works hard to create a warm and welcoming library.'),
+('/images/branches/3.png', '1316 Broad Street', 'Washington Park Branch', '555-7890', '1927-09-20', 'The Washington Park branch, newly renovated with a new roof, exterior brickwork, a restroom, a new entrance, fire-alarm system and carpeting.');
 SELECT * FROM LibraryBranches
 
 INSERT INTO LibraryCards(Created, Fees) VALUES 
-('2017-06-20', 12.00),
-('2017-06-20', 0.00),
-('2017-06-21', 0.50),
-('2017-06-21', 0.00),
-('2017-06-21', 3.50),
-('2017-06-23', 1.50),
-('2017-06-23', 0.00),
-('2017-06-23', 8.00);
+('2018-01-20', 12.00),
+('2018-01-20', 0.00),
+('2018-01-21', 0.50),
+('2018-01-21', 0.00),
+('2018-01-21', 3.50),
+('2018-01-23', 1.50),
+('2018-01-23', 0.00),
+('2018-01-23', 8.00),
+('2018-01-23', 0.00);
 SELECT * FROM LibraryCards
 
 INSERT INTO 
 Patrons([Address], DateOfBirth, FirstName, HomeLibraryBranchId, LastName, LibraryCardId, TelephoneNumber) VALUES
-('165 Peace St', '1986-07-10', 'Jane', 1, 'Patterson', 1, '555-1234'),
-('324 Shadow Ln', '1984-03-12', 'Margaret', 2, 'Smith', 2, '555-7785'),
-('18 Stone Cir', '1956-02-10', 'Tomas', 2, 'Galloway', 3, '555-3467'),
-('246 Jennifer St', '1997-01-17', 'Mary', 3, 'Li', 4, '555-1223'),
-('1465 Williamson St', '1952-09-16', 'Dan', 3, 'Carter', 5, '555-8884'),
-('785 Park Ave', '1994-03-24', 'Aruna', 3, 'Adhiban', 6, '555-9988'),
-('5654 Main St', '2001-11-23', 'Raj', 1, 'Prasad', 7, '555-7894'),
-('1352 Bicycle Ct', '1981-10-16', 'Tatyana', 3, 'Ponomaryova', 8, '555-4568');
+('165 Peace St', 	'1986-07-10', 'Tom', 		1, 'Hanks', 		1, '555-1234'),
+('324 Shadow Ln', 	'1984-03-12', 'Brad', 		2, 'Pitt', 		2, '555-7785'),
+('18 Stone Cir', 	'1956-02-10', 'Matt', 		3, 'Damon', 		3, '555-3467'),
+('246 Jennifer St', 	'1997-01-17', 'Will', 		1, 'Smith', 		4, '555-1223'),
+('1465 Williamson St', 	'1952-09-16', 'Al', 		2, 'Pacino', 		5, '555-8884'),
+('785 Park Ave', 	'1994-03-24', 'Julia', 		3, 'Roberts', 		6, '555-9988'),
+('5654 Main St', 	'1978-11-23', 'Natalie', 	1, 'Portman', 		7, '555-7894'),
+('1352 Bicycle Ct', 	'1981-10-16', 'Halle', 		2, 'Berry', 		8, '555-4568'),
+('1111 Scorn Ct', 	'1954-10-16', 'Jackie', 	3, 'Chan', 		9, '555-4568')
 SELECT * FROM Patrons
 
 INSERT INTO Statuses 
@@ -39,27 +41,30 @@ SELECT * FROM Statuses
 
 INSERT INTO LibraryAssets
 (Discriminator, Cost, LocationId, StatusId, Author, DeweyIndex, ISBN, Title, [Year], Director, ImageUrl, NumberOfCopies) VALUES
-('Book', 18.00, 2, 2, 'Jane Austen', '823.123', '9781519202987', 'Emma', 1815, NULL, '/images/emma.png', 1),
-('Book', 18.00, 3, 2, 'Charlotte Brontë', '822.133', '9781519133977', 'Jane Eyre', 1847, NULL, '/images/janeeyre.png', 1),
-('Book', 12.99, 2, 2, 'Herman Melville', '821.153', '9780746062760', 'Moby Dick', 1851, NULL, '/images/mobydick.png', 1),
-('Book', 24.00, 2, 2, 'James Joyce', '822.556', '9788854139343', 'Ulysses', 1922, NULL, '/images/ulysses.png', 3),
-('Book', 11.00, 3, 2, 'Plato', '820.119', '9780758320209', 'Republic', -380, NULL, '/images/republic.png', 2),
-('Book', 18.00, 3, 2, 'Bram Stoker', '821.526', '9781623750282', 'Dracula', 1897, NULL, '/images/dracula.png', 4),
-('Book', 12.99, 2, 2, 'Don Delillo', '822.436', '9780670803736', 'White Noise', 1985, NULL, '/images/default.png', 1),
-('Book', 16.00, 2, 2, 'James Baldwin', '821.325', '9780552084574', 'Another Country', 1962, NULL, '/images/default.png', 2),
-('Book', 11.00, 1, 2, 'Virginia Woolf', '822.888', '9781904919582', 'The Waves', 1931, NULL, '/images/thewaves.png', 1),
-('Book', 11.99, 1, 2, 'Alice Walker',	'820.298', '9780151191543', 'The Color Purple', 1982, NULL, '/images/default.png', 2),
-('Book', 12.50, 1, 2, 'Gabriel García Márquez', '821.544', '9789631420494', 'One Hundred Years of Solitude', 1967, NULL, '/images/default.png', 1),
-('Book', 22.00, 1, 2, 'Alice Monroe', '821.444', '9788702163452', 'Friend of My Youth', 1990, NULL, '/images/default.png', 1),
-('Book', 13.50, 1, 2, 'Virginia Woolf', '820.111', '9780795310522', 'To the Lighthouse', 1927, NULL, '/images/tothelighthouse.png', 5),
-('Book', 15.99, 3, 2, 'Virginia Woolf', '821.254', '9785457626126', 'Mrs Dalloway', 1925, NULL, '/images/mrsdalloway.png', 1),
-('Video', 24.00, 1, 2, NULL, NULL, NULL, 'Blue Velvet',	1986, 'David Lynch', '/images/default.png', 1),
-('Video', 24.00, 1, 2, NULL, NULL, NULL, 'Trois Coleurs: Rouge', 1994, 'Krzysztof Kieslowski', '/images/default.png', 1),
-('Video', 30.00, 1, 2, NULL, NULL, NULL, 'Citizen Kane',	1941, 'Orson Welles', '/images/default.png', 1),
-('Video', 28.00, 2, 2, NULL, NULL, NULL, 'Spirited Away',	2002, 'Hayao Miyazaki', '/images/default.png', 1),
-('Video', 23.00, 2, 2, NULL, NULL, NULL, 'The Departed',	2006, 'Martin Scorsese', '/images/default.png', 1),
-('Video', 17.99, 2, 2, NULL, NULL, NULL, 'Taxi Driver', 1976, 'Martin Scorsese', '/images/default.png', 1),
-('Video', 18.00, 3, 2, NULL, NULL, NULL, 'Casablanca',	1943, 'Michael Curtiz', '/images/default.png', 1);
+('Book', 12.99, 1, 2, 'Herman Melville', 	'822.345', '9780746062760', 'Moby Dick', 1851, NULL, '/images/mobydick.png', 1),
+('Book', 18.00, 2, 2, 'Bram Stoker', 		'825.678', '9781623750282', 'Dracula', 1897, NULL, '/images/dracula.png', 4),
+('Book', 11.99, 3, 2, 'Alice Walker',		'829.001', '9780151191543', 'The Color Purple', 1982, NULL, '/images/colorpurple.png', 2),
+('Book', 15.99, 1, 2, 'Miguel de Cervantes', 	'835.567', '9785457624589', 'Don Quixote', 1925, NULL, '/images/quixote.png', 1),
+('Book', 15.99, 2, 2, 'William Shakespeare', 	'836.678', '9784567135751', 'Hamlet', 1921, NULL, '/images/hamlet.png', 1),
+('Book', 15.99, 3, 2, 'Mark Twain', 		'837.789', '9783457612345', 'The Adventures of Huckleberry Finn', 1922, NULL, '/images/huckleberry.png', 1),
+('Book', 15.99, 1, 2, 'Lewis Carroll', 		'838.901', '9787897668891', 'Alices Adventures in Wonderland', 1935, NULL, '/images/alice.png', 1),
+('Book', 15.99, 2, 2, 'Ralph Ellison', 		'839.001', '9783457345611', 'Invisible Man', 1915, NULL, '/images/invisible.png', 1),
+('Book', 15.99, 3, 2, 'William Golding', 	'840.002', '9787897624466', 'Lord of the Flies', 1905, NULL, '/images/lordflies.png', 1),
+('Book', 15.99, 1, 2, 'Mary Shelley', 		'841.333', '9783457629933', 'Frankenstein', 1925, NULL, '/images/frankenstein.png', 1),
+('Book', 15.99, 2, 2, 'J. R. R. Tolkien', 	'842.421', '9789997622790', 'The Lord of the Rings', 1965, NULL, '/images/lotr.png', 1),
+('Book', 15.99, 3, 2, 'E. B. White', 		'843.768', '9782347624321', 'Charlottes Web', 1975, NULL, '/images/charlottes.png', 1),
+('Book', 15.99, 1, 2, 'Alexandre Dumas', 	'844.990', '9785678905693', 'The Count of Monte Cristo', 1905, NULL, '/images/montecristo.png', 1),
+('Book', 15.99, 2, 2, 'Robert Louis Stevenson',	'845.439', '9786787129934', 'The Strange Case of Dr. Jekyll and Mr. Hyde', 1955, NULL, '/images/jekyll.png', 1),
+('Book', 15.99, 3, 2, 'J. K. Rowling', 		'846.123', '9788907230011', 'Harry Potter And The Philosophers Stone', 1995, NULL, '/images/potter.png', 1),
+('Book', 15.99, 1, 2, 'Arthur Conan Doyle', 	'847.560', '9781237568902', 'The Complete Sherlock Holmes', 1965, NULL, '/images/holmes.png', 1),
+('Book', 15.99, 2, 2, 'Frank Herbert', 		'848.345', '9784537345678', 'Dune', 1945, NULL, '/images/dune.png', 1),
+('Book', 15.99, 3, 2, 'Alexandre Dumas', 	'849.123', '9787657787965', 'The Three Musketeers', 1945, NULL, '/images/three.png', 1),
+('Video', 24.00, 1, 2, NULL, NULL, NULL, 'Blue Velvet',	1986, 'David Lynch', '/images/bluevelvet.png', 1),
+('Video', 24.00, 2, 2, NULL, NULL, NULL, 'Trois Coleurs: Rouge', 1994, 'Krzysztof Kieslowski', '/images/redrouge.png', 1),
+('Video', 30.00, 3, 2, NULL, NULL, NULL, 'Citizen Kane',	1941, 'Orson Welles', '/images/citizenkane.png', 1),
+('Video', 23.00, 1, 2, NULL, NULL, NULL, 'The Departed',	2006, 'Martin Scorsese', '/images/departed.png', 1),
+('Video', 17.99, 2, 2, NULL, NULL, NULL, 'Taxi Driver', 1976, 'Martin Scorsese', '/images/taxidriver.png', 1),
+('Video', 18.00, 3, 2, NULL, NULL, NULL, 'Casablanca',	1943, 'Michael Curtiz', '/images/casa.png', 1);
 SELECT * FROM LibraryAssets
 
 INSERT INTO BranchHours (BranchId, CloseTime, [DayOfWeek], OpenTime) VALUES 
