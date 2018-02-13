@@ -1,4 +1,4 @@
-﻿@model Library.Models.Branch.BranchIndexModel
+﻿@model Library.ViewModels.Branch.BranchIndexModel
 
 @section Scripts{
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
@@ -15,7 +15,6 @@
         <thead>
             <tr>
                 <th>Branch Name</th>
-                <th>Open Now</th>
                 <th>Number Of Assets</th>
                 <th>Number of Patrons</th>
             </tr>
@@ -27,7 +26,6 @@
                     <td class="strongTd">
                         <a asp-controller="Branch" asp-action="Detail" asp-route-id="@branch.Id">@branch.Name</a>
                     </td>
-                    <td>@branch.IsOpen</td>
                     <td>@branch.NumberOfAssets</td>
                     <td>@branch.NumberOfPatrons</td>
                 </tr>

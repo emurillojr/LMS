@@ -1,4 +1,4 @@
-﻿@model Library.Models.Patron.PatronIndexModel
+﻿@model Library.ViewModels.Patron.PatronIndexModel
 
 @section Scripts{
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
@@ -17,8 +17,6 @@
                 <th>Profile Link</th>
                 <th>Last Name</th>
                 <th>First Name</th>
-                <th>Library Card Id</th>
-                <th>Overdue Fees</th>
                 <th>Home Library</th>
             </tr>
         </thead>
@@ -29,8 +27,6 @@
                     <td id="patronIcon"><a asp-controller="Patron" asp-action="Detail" asp-route-id="@patron.Id"><i class="fa fa-user fa-2x"></i></a></td>
                     <td>@patron.LastName</td>
                     <td>@patron.FirstName</td>
-                    <td>@patron.LibraryCardId</td>
-                    <td>@patron.OverdueFees</td>
                     <td>@patron.HomeLibraryBranch</td>
                 </tr>
             }

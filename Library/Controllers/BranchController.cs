@@ -1,5 +1,5 @@
-﻿using Library.Models.Branch;
-using LibraryData;
+﻿using Library.Interfaces;
+using Library.ViewModels.Branch;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
@@ -22,7 +22,7 @@ namespace Library.Controllers
             {
                 Id = branch.Id,
                 Name = branch.Name,
-                IsOpen = _branch.IsBranchOpen(branch.Id),
+                //IsOpen = _branch.IsBranchOpen(branch.Id),
                 NumberOfAssets = _branch.GetAssets(branch.Id).Count(),
                 NumberOfPatrons = _branch.GetPatrons(branch.Id).Count()
             });
@@ -50,7 +50,7 @@ namespace Library.Controllers
                 NumberOfPatrons = _branch.GetPatrons(id).Count(),
                 TotalAssetValue = _branch.GetAssets(id).Sum(a => a.Cost),
                 ImageUrl = branch.ImageUrl,
-                HoursOpen = _branch.GetBranchHours(id)
+                //HoursOpen = _branch.GetBranchHours(id)
             };
 
             return View(model);

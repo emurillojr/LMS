@@ -5028,34 +5028,6 @@
         "runtime": {
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
         }
-      },
-      "LibraryData/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.0",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "2.0.1",
-          "Microsoft.EntityFrameworkCore.SqlServer": "2.0.1",
-          "Microsoft.EntityFrameworkCore.Tools": "2.0.1"
-        },
-        "compile": {
-          "bin/placeholder/LibraryData.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/LibraryData.dll": {}
-        }
-      },
-      "LibraryServices/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.0",
-        "dependencies": {
-          "LibraryData": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/LibraryServices.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/LibraryServices.dll": {}
-        }
       }
     }
   },
@@ -13141,22 +13113,10 @@
         "windowsazure.storage.8.1.4.nupkg.sha512",
         "windowsazure.storage.nuspec"
       ]
-    },
-    "LibraryData/1.0.0": {
-      "type": "project",
-      "path": "../LibraryData/LibraryData.csproj",
-      "msbuildProject": "../LibraryData/LibraryData.csproj"
-    },
-    "LibraryServices/1.0.0": {
-      "type": "project",
-      "path": "../LibraryServices/LibraryServices.csproj",
-      "msbuildProject": "../LibraryServices/LibraryServices.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
-      "LibraryData >= 1.0.0",
-      "LibraryServices >= 1.0.0",
       "Microsoft.AspNetCore.All >= 2.0.5",
       "Microsoft.EntityFrameworkCore >= 2.0.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 2.0.1",
@@ -13199,14 +13159,7 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
-          "projectReferences": {
-            "C:\\Users\\murilloe\\Desktop\\GIT Personal\\LMS\\LibraryServices\\LibraryServices.csproj": {
-              "projectPath": "C:\\Users\\murilloe\\Desktop\\GIT Personal\\LMS\\LibraryServices\\LibraryServices.csproj"
-            },
-            "C:\\Users\\murilloe\\Desktop\\GIT Personal\\LMS\\LibraryData\\LibraryData.csproj": {
-              "projectPath": "C:\\Users\\murilloe\\Desktop\\GIT Personal\\LMS\\LibraryData\\LibraryData.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

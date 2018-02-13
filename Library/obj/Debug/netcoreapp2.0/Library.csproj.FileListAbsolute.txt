@@ -29,16 +29,12 @@ C:\Users\murilloe\Desktop\GIT Personal\LMS\Library\bin\Debug\netcoreapp2.0\Libra
 C:\Users\murilloe\Desktop\GIT Personal\LMS\Library\bin\Debug\netcoreapp2.0\Library.runtimeconfig.dev.json
 C:\Users\murilloe\Desktop\GIT Personal\LMS\Library\bin\Debug\netcoreapp2.0\Library.dll
 C:\Users\murilloe\Desktop\GIT Personal\LMS\Library\bin\Debug\netcoreapp2.0\Library.pdb
-C:\Users\murilloe\Desktop\GIT Personal\LMS\Library\bin\Debug\netcoreapp2.0\LibraryData.dll
-C:\Users\murilloe\Desktop\GIT Personal\LMS\Library\bin\Debug\netcoreapp2.0\LibraryData.pdb
 C:\Users\murilloe\Desktop\GIT Personal\LMS\Library\obj\Debug\netcoreapp2.0\Library.csprojResolveAssemblyReference.cache
 C:\Users\murilloe\Desktop\GIT Personal\LMS\Library\obj\Debug\netcoreapp2.0\Library.csproj.CoreCompileInputs.cache
 C:\Users\murilloe\Desktop\GIT Personal\LMS\Library\obj\Debug\netcoreapp2.0\Library.AssemblyInfoInputs.cache
 C:\Users\murilloe\Desktop\GIT Personal\LMS\Library\obj\Debug\netcoreapp2.0\Library.AssemblyInfo.cs
 C:\Users\murilloe\Desktop\GIT Personal\LMS\Library\obj\Debug\netcoreapp2.0\Library.dll
 C:\Users\murilloe\Desktop\GIT Personal\LMS\Library\obj\Debug\netcoreapp2.0\Library.pdb
-C:\Users\murilloe\Desktop\GIT Personal\LMS\Library\bin\Debug\netcoreapp2.0\LibraryServices.dll
-C:\Users\murilloe\Desktop\GIT Personal\LMS\Library\bin\Debug\netcoreapp2.0\LibraryServices.pdb
 D:\GITFILES\LMS\Library\bin\Debug\netcoreapp2.0\Library.deps.json
 D:\GITFILES\LMS\Library\bin\Debug\netcoreapp2.0\Library.runtimeconfig.json
 D:\GITFILES\LMS\Library\bin\Debug\netcoreapp2.0\Library.runtimeconfig.dev.json
@@ -54,3 +50,25 @@ D:\GITFILES\LMS\Library\obj\Debug\netcoreapp2.0\Library.AssemblyInfoInputs.cache
 D:\GITFILES\LMS\Library\obj\Debug\netcoreapp2.0\Library.AssemblyInfo.cs
 D:\GITFILES\LMS\Library\obj\Debug\netcoreapp2.0\Library.dll
 D:\GITFILES\LMS\Library\obj\Debug\netcoreapp2.0\Library.pdb
+C:\Users\murilloe\Desktop\GIT Personal\Library\LMS\Library\obj\Debug\netcoreapp2.0\Library.csprojResolveAssemblyReference.cache
+C:\Users\murilloe\Desktop\GIT Personal\Library\LMS\Library\obj\Debug\netcoreapp2.0\Library.csproj.CoreCompileInputs.cache
+C:\Users\murilloe\Desktop\GIT Personal\Library\LMS\Library\obj\Debug\netcoreapp2.0\Library.AssemblyInfoInputs.cache
+C:\Users\murilloe\Desktop\GIT Personal\Library\LMS\Library\obj\Debug\netcoreapp2.0\Library.AssemblyInfo.cs
+C:\Users\murilloe\Desktop\GIT Personal\Library\LMS\Library\obj\Debug\netcoreapp2.0\Library.dll
+C:\Users\murilloe\Desktop\GIT Personal\Library\LMS\Library\obj\Debug\netcoreapp2.0\Library.pdb
+C:\Users\murilloe\Desktop\GIT Personal\Library\LMS\Library\bin\Debug\netcoreapp2.0\Library.deps.json
+C:\Users\murilloe\Desktop\GIT Personal\Library\LMS\Library\bin\Debug\netcoreapp2.0\Library.runtimeconfig.json
+C:\Users\murilloe\Desktop\GIT Personal\Library\LMS\Library\bin\Debug\netcoreapp2.0\Library.runtimeconfig.dev.json
+C:\Users\murilloe\Desktop\GIT Personal\Library\LMS\Library\bin\Debug\netcoreapp2.0\Library.dll
+C:\Users\murilloe\Desktop\GIT Personal\Library\LMS\Library\bin\Debug\netcoreapp2.0\Library.pdb
+C:\Users\murilloe\Desktop\GIT Personal\LMS\Library\LMS\Library\bin\Debug\netcoreapp2.0\Library.deps.json
+C:\Users\murilloe\Desktop\GIT Personal\LMS\Library\LMS\Library\bin\Debug\netcoreapp2.0\Library.runtimeconfig.json
+C:\Users\murilloe\Desktop\GIT Personal\LMS\Library\LMS\Library\bin\Debug\netcoreapp2.0\Library.runtimeconfig.dev.json
+C:\Users\murilloe\Desktop\GIT Personal\LMS\Library\LMS\Library\bin\Debug\netcoreapp2.0\Library.dll
+C:\Users\murilloe\Desktop\GIT Personal\LMS\Library\LMS\Library\bin\Debug\netcoreapp2.0\Library.pdb
+C:\Users\murilloe\Desktop\GIT Personal\LMS\Library\LMS\Library\obj\Debug\netcoreapp2.0\Library.csprojResolveAssemblyReference.cache
+C:\Users\murilloe\Desktop\GIT Personal\LMS\Library\LMS\Library\obj\Debug\netcoreapp2.0\Library.csproj.CoreCompileInputs.cache
+C:\Users\murilloe\Desktop\GIT Personal\LMS\Library\LMS\Library\obj\Debug\netcoreapp2.0\Library.AssemblyInfoInputs.cache
+C:\Users\murilloe\Desktop\GIT Personal\LMS\Library\LMS\Library\obj\Debug\netcoreapp2.0\Library.AssemblyInfo.cs
+C:\Users\murilloe\Desktop\GIT Personal\LMS\Library\LMS\Library\obj\Debug\netcoreapp2.0\Library.dll
+C:\Users\murilloe\Desktop\GIT Personal\LMS\Library\LMS\Library\obj\Debug\netcoreapp2.0\Library.pdb

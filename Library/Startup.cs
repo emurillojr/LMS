@@ -1,6 +1,5 @@
-﻿using LibraryData; // added reference LibraryData project to Library
-using LibraryData.Models; // added reference
-using LibraryServices;
+﻿using Library.Controllers;
+using Library.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -25,10 +24,10 @@ namespace Library
             services.AddMvc();
             services.AddSingleton(Configuration);
             services.AddScoped<ILibraryAsset, LibraryAssetService>(); //
-            services.AddScoped<ICheckout, CheckoutService>(); //
+            //services.AddScoped<ICheckout, CheckoutService>(); //
             services.AddScoped<IPatron, PatronService>(); //
             services.AddScoped<ILibraryBranch, LibraryBranchService>(); //
-            services.AddScoped<IAll, AllService>();
+            //services.AddScoped<IAll, AllService>();
 
             // added reference LibraryData project to Library
             //add DBContect on service collection
