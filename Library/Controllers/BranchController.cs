@@ -1,6 +1,7 @@
 ﻿using Library.Interfaces;
 using Library.ViewModels.Branch;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Linq;
 
 namespace Library.Controllers
@@ -54,6 +55,24 @@ namespace Library.Controllers
             };
 
             return View(model);
+        }
+
+        public ActionResult ListofBranches(string searchString)
+        {
+            // https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/sort-filter-page
+
+            //var branch = _branch.GetAll().ToList();  // list of entire catalog of library assets
+
+            var branch = from b in _branch.GetAll().ToList() select b;
+
+            ViewData["CurrentFilter"] = searchString;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                branch = branch.Where(b => b.Name.ToUpper().Contains(searchString.ToUpper()));
+            }
+
+            return View(branch);
         }
     }
 }

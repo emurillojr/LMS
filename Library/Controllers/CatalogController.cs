@@ -1,6 +1,7 @@
 ﻿using Library.Interfaces;
 using Library.ViewModels.Catalog;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Linq;
 
 namespace Library.Controllers
@@ -53,6 +54,25 @@ namespace Library.Controllers
             };
 
             return View(model);
+        }
+
+
+        public ActionResult ListofCatalog(string searchString)
+        {
+            // https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/sort-filter-page
+
+            //var catalog = _assets.GetAll().ToList();  // list of entire catalog of library assets
+
+            var catalog = from c in _assets.GetAll().ToList() select c;
+
+            ViewData["CurrentFilter"] = searchString;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                catalog = catalog.Where(c => c.Title.ToUpper().Contains(searchString.ToUpper()));
+            }
+
+            return View(catalog);
         }
     }
 }

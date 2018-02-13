@@ -1,6 +1,7 @@
 ﻿using Library.Interfaces;
 using Library.ViewModels.Patron;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Linq;
 
 namespace Library.Controllers
@@ -50,6 +51,25 @@ namespace Library.Controllers
 
             return View(model);
         }
+
+        public ActionResult ListofPatrons(string searchString)
+        {
+            // // https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/sort-filter-page
+
+            //var patrons = _patron.GetAll().ToList();  // list of entire catalog of library assets
+
+            var patrons = from p in _patron.GetAll().ToList() select p;
+
+            ViewData["CurrentFilter"] = searchString;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                patrons = patrons.Where(p => p.LastName.ToUpper().Contains(searchString.ToUpper()));
+            }
+
+            return View(patrons);
+        }
+
     }
 }
 
