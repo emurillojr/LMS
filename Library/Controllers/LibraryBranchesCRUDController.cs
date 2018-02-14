@@ -53,7 +53,7 @@ namespace Library.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Address,Telephone,Description,OpenDate,ImageUrl")] LibraryBranch libraryBranch)
+        public async Task<IActionResult> Create([Bind("Id,Name,Address,Telephone,Description,OpenDate,ImageUrl")] Branch libraryBranch)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace Library.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Address,Telephone,Description,OpenDate,ImageUrl")] LibraryBranch libraryBranch)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Address,Telephone,Description,OpenDate,ImageUrl")] Branch libraryBranch)
         {
             if (id != libraryBranch.Id)
             {

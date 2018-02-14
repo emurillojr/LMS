@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Library.Models.Asset
+namespace Library.Models.Items
 {
-    public class Video : LibraryAsset   // video is a library asset, inherits LibraryAsset
+    public class Video : Asset   // video is a library asset, inherits LibraryAsset
     {
         [Required]
         public string Director { get; set; }

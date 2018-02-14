@@ -1,7 +1,7 @@
-﻿@model IEnumerable<Library.Models.Asset.LibraryAsset>
+﻿@model IEnumerable<Library.Models.Asset>
 
 @{
-    ViewData["Title"] = "ListofCatalog";
+    ViewData["Title"] = "ListofAssets";
 }
 @section Scripts{
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
@@ -20,12 +20,12 @@
     <a asp-action="Create">Create New</a>
 </p>*@
 
-<form asp-action="ListofCatalog" method="get">
+<form asp-action="ListofAssets" method="get">
     <div class="form-actions no-color">
         <p>
             Find by title: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
             <input type="submit" value="Search" class="btn btn-default" /> |
-            <a asp-action="ListofCatalog">Back to Full List</a>
+            <a asp-action="ListofAssets">Back to Full List</a>
         </p>
     </div>
 </form>

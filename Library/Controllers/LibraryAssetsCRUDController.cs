@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Library.Models.Asset;
+using Library.Models;
 
 namespace Library.Controllers
 {
@@ -53,7 +53,7 @@ namespace Library.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Year,Cost,ImageUrl,NumberOfCopies")] LibraryAsset libraryAsset)
+        public async Task<IActionResult> Create([Bind("Id,Title,Year,Cost,ImageUrl,NumberOfCopies")] Asset libraryAsset)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace Library.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Year,Cost,ImageUrl,NumberOfCopies")] LibraryAsset libraryAsset)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Year,Cost,ImageUrl,NumberOfCopies")] Asset libraryAsset)
         {
             if (id != libraryAsset.Id)
             {

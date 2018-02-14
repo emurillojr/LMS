@@ -1,13 +1,12 @@
 ﻿using Library.Interfaces;
 using Library.Models;
-using Library.Models.Asset;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Library.Controllers
 {
-    public class LibraryBranchService : ILibraryBranch
+    public class LibraryBranchService : IBranch
     {
         private LibraryContext _context; // private field to store the context.
 
@@ -16,21 +15,21 @@ namespace Library.Controllers
             _context = context;
         }
 
-        LibraryBranch ILibraryBranch.Get(int branchId)
+        Branch IBranch.Get(int branchId)
         {
             return _context.LibraryBranches
                 .Include(b => b.Patrons)
                 .Include(b => b.LibraryAssets).FirstOrDefault(b => b.Id == branchId);
         }
 
-        IEnumerable<LibraryBranch> ILibraryBranch.GetAll()
+        IEnumerable<Branch> IBranch.GetAll()
         {
             return _context.LibraryBranches
                 .Include(b => b.Patrons)
                 .Include(b => b.LibraryAssets);
         }
 
-        IEnumerable<LibraryAsset> ILibraryBranch.GetAssets(int branchId)
+        IEnumerable<Asset> IBranch.GetAssets(int branchId)
         {
             return _context.LibraryBranches
                 .Include(b => b.LibraryAssets)
@@ -38,7 +37,7 @@ namespace Library.Controllers
                 .LibraryAssets;
         }
 
-        IEnumerable<Patron> ILibraryBranch.GetPatrons(int branchId)
+        IEnumerable<Patron> IBranch.GetPatrons(int branchId)
         {
             return _context.LibraryBranches
                 .Include(b => b.Patrons)

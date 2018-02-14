@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Library.Models.Asset
+namespace Library.Models
 {
-    public abstract class LibraryAsset // books videos mags etc
+    public abstract class Asset // books videos mags etc
     {
         public int Id { get; set; }
 
@@ -16,6 +16,6 @@ namespace Library.Models.Asset
         public decimal Cost { get; set; }
         public string ImageUrl { get; set; }
         public int NumberOfCopies { get; set; }
-        public virtual LibraryBranch Location { get; set; }  // foriegn key relationship between Library asset in a certain branch
+        public virtual Branch Location { get; set; }  // foriegn key relationship between Library asset in a certain branch
     }
 }

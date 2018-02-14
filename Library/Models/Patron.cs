@@ -11,6 +11,6 @@ namespace Library.Models
         public string Address { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string TelephoneNumber { get; set; }
-        public virtual LibraryBranch HomeLibraryBranch { get; set; } // foreign key virtual for lazy loading - https://msdn.microsoft.com/en-us/library/jj574232(v=vs.113).aspx
+        public virtual Branch HomeLibraryBranch { get; set; } // foreign key virtual for lazy loading - https://msdn.microsoft.com/en-us/library/jj574232(v=vs.113).aspx
     }
 }

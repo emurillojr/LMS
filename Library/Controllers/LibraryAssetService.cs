@@ -1,13 +1,13 @@
 ﻿using Library.Interfaces;
 using Library.Models;
-using Library.Models.Asset;
+using Library.Models.Items;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Library.Controllers
 {
-    public class LibraryAssetService : ILibraryAsset // implement ILibraryAsset interface
+    public class LibraryAssetService : IAsset // implement ILibraryAsset interface
     {
         private LibraryContext _context; // private reference to DBContext
         public LibraryAssetService(LibraryContext context) // constructor that takes in context - gives access to all the methods on DBContext. 
@@ -15,20 +15,20 @@ namespace Library.Controllers
             _context = context;
         }
 
-        public IEnumerable<LibraryAsset> GetAll()
+        public IEnumerable<Asset> GetAll()
         {
             return _context.LibraryAssets // returns collection of all assets in database
                 .Include(asset => asset.Location); // include entity - in query the location
         }
 
-        public LibraryAsset GetById(int id)
+        public Asset GetById(int id)
         {
             return
                 GetAll()
                 .FirstOrDefault(asset => asset.Id == id);  // return null otherwise first instance of collection
         }
 
-        public LibraryBranch GetCurrentLocation(int id)
+        public Branch GetCurrentLocation(int id)
         {
             return _context.LibraryAssets.FirstOrDefault(asset => asset.Id == id).Location;
         }

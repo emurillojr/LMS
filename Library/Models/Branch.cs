@@ -1,11 +1,10 @@
-﻿using Library.Models.Asset;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Library.Models
 {
-    public class LibraryBranch
+    public class Branch
     {
         public int Id { get; set; }
 
@@ -21,7 +20,7 @@ namespace Library.Models
         public string Description { get; set; }
         public DateTime OpenDate { get; set; } // when branch was founded
         public virtual IEnumerable<Patron> Patrons { get; set; } // collection of patrons that belong to that library branch
-        public virtual IEnumerable<LibraryAsset> LibraryAssets { get; set; } // collection of Library assets that belong to that library branch
+        public virtual IEnumerable<Asset> LibraryAssets { get; set; } // collection of Library assets that belong to that library branch
         public string ImageUrl { get; set; }
     }
 }

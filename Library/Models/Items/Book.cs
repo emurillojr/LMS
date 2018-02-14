@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Library.Models.Asset
+namespace Library.Models.Items
 {
-    public class Book : LibraryAsset   // book is a library asset, inherits LibraryAsset
+    public class Book : Asset   // book is a library asset, inherits LibraryAsset
     {
         [Required]
         public string ISBN { get; set; }

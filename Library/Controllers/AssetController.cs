@@ -1,15 +1,15 @@
 ﻿using Library.Interfaces;
-using Library.ViewModels.Catalog;
+using Library.ViewModels.Asset;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
 
 namespace Library.Controllers
 {
-    public class CatalogController : Controller // inherit from Controller base class
+    public class AssetController : Controller // inherit from Controller base class
     {
-        private ILibraryAsset _assets;
-        public CatalogController(ILibraryAsset assets) // contructor  
+        private IAsset _assets;
+        public AssetController(IAsset assets) // contructor  
         {
             _assets = assets;
         }
@@ -57,22 +57,22 @@ namespace Library.Controllers
         }
 
 
-        public ActionResult ListofCatalog(string searchString)
+        public ActionResult ListofAssets(string searchString)
         {
             // https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/sort-filter-page
 
             //var catalog = _assets.GetAll().ToList();  // list of entire catalog of library assets
 
-            var catalog = from c in _assets.GetAll().ToList() select c;
+            var assetList = from c in _assets.GetAll().ToList() select c;
 
             ViewData["CurrentFilter"] = searchString;
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                catalog = catalog.Where(c => c.Title.ToUpper().Contains(searchString.ToUpper()));
+                assetList = assetList.Where(c => c.Title.ToUpper().Contains(searchString.ToUpper()));
             }
 
-            return View(catalog);
+            return View(assetList);
         }
     }
 }

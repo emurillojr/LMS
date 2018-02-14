@@ -1,9 +1,7 @@
-﻿using System;
+﻿using Library.ViewModels.Asset;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace Library.ViewModels.Catalog
+namespace Library.ViewModels.Asset
 {
     public class AssetIndexModel
     {

@@ -8,10 +8,10 @@ namespace Library.Controllers
 {
     public class BranchController : Controller // inherit from Controller base class
     {
-        private ILibraryBranch _branch;
+        private IBranch _branch;
 
         // create a constructor takes branchservice
-        public BranchController(ILibraryBranch branch)
+        public BranchController(IBranch branch)
         {
             // save branchService param off into a private field  to have access in the rest of the controller
             _branch = branch;
