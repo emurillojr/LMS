@@ -23,7 +23,6 @@ namespace Library.Controllers
             {
                 Id = branch.Id,
                 Name = branch.Name,
-                //IsOpen = _branch.IsBranchOpen(branch.Id),
                 NumberOfAssets = _branch.GetAssets(branch.Id).Count(),
                 NumberOfPatrons = _branch.GetPatrons(branch.Id).Count()
             });
@@ -51,7 +50,6 @@ namespace Library.Controllers
                 NumberOfPatrons = _branch.GetPatrons(id).Count(),
                 TotalAssetValue = _branch.GetAssets(id).Sum(a => a.Cost),
                 ImageUrl = branch.ImageUrl,
-                //HoursOpen = _branch.GetBranchHours(id)
             };
 
             return View(model);
@@ -60,13 +58,10 @@ namespace Library.Controllers
         public ActionResult ListofBranches(string searchString)
         {
             // https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/sort-filter-page
-
             //var branch = _branch.GetAll().ToList();  // list of entire catalog of library assets
 
             var branch = from b in _branch.GetAll().ToList() select b;
-
             ViewData["CurrentFilter"] = searchString;
-
             if (!String.IsNullOrEmpty(searchString))
             {
                 branch = branch.Where(b => b.Name.ToUpper().Contains(searchString.ToUpper()));

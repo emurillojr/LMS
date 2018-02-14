@@ -6,11 +6,11 @@ using System.Linq;
 
 namespace Library.Controllers
 {
-    public class LibraryBranchService : IBranch
+    public class BranchService : IBranch
     {
         private LibraryContext _context; // private field to store the context.
 
-        public LibraryBranchService(LibraryContext context)
+        public BranchService(LibraryContext context)
         {
             _context = context;
         }

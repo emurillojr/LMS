@@ -7,10 +7,10 @@ using System.Linq;
 
 namespace Library.Controllers
 {
-    public class LibraryAssetService : IAsset // implement ILibraryAsset interface
+    public class AssetService : IAsset // implement ILibraryAsset interface
     {
         private LibraryContext _context; // private reference to DBContext
-        public LibraryAssetService(LibraryContext context) // constructor that takes in context - gives access to all the methods on DBContext. 
+        public AssetService(LibraryContext context) // constructor that takes in context - gives access to all the methods on DBContext. 
         {
             _context = context;
         }

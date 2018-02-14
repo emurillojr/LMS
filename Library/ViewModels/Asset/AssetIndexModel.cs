@@ -1,5 +1,4 @@
-﻿using Library.ViewModels.Asset;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Library.ViewModels.Asset
 {

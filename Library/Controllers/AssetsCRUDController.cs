@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Library.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using Library.Models;
 
 namespace Library.Controllers
 {
-    public class LibraryAssetsCRUDController : Controller
+    public class AssetsCRUDController : Controller
     {
         private readonly LibraryContext _context;
 
-        public LibraryAssetsCRUDController(LibraryContext context)
+        public AssetsCRUDController(LibraryContext context)
         {
             _context = context;
         }

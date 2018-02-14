@@ -2,7 +2,7 @@
 
 namespace Library.Models.Items
 {
-    public class Book : Asset   // book is a library asset, inherits LibraryAsset
+    public class Book : Asset   // book is a library asset, inherits Asset
     {
         [Required]
         public string ISBN { get; set; }

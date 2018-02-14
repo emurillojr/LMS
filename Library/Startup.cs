@@ -23,11 +23,9 @@ namespace Library
             // add framework services
             services.AddMvc();
             services.AddSingleton(Configuration);
-            services.AddScoped<IAsset, LibraryAssetService>(); //
-            //services.AddScoped<ICheckout, CheckoutService>(); //
+            services.AddScoped<IAsset, AssetService>(); //
             services.AddScoped<IPatron, PatronService>(); //
-            services.AddScoped<IBranch, LibraryBranchService>(); //
-            //services.AddScoped<IAll, AllService>();
+            services.AddScoped<IBranch, BranchService>(); //
 
             // added reference LibraryData project to Library
             //add DBContect on service collection
