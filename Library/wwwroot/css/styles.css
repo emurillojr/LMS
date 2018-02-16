@@ -72,7 +72,7 @@
 }
 
 #catalogIndexTable {
-    font-size: 1.3em;
+    font-size: 1.2em;
 }
 
     #catalogIndexTable td {
@@ -101,7 +101,7 @@
 
 .customTable td {
     text-align: left;
-    font-size: 1.2em;
+    font-size: 1.3em;
 }
 
 .strongTd {
@@ -115,13 +115,13 @@
 }
 
 .imageCell {
-    width: 128px;
-    padding: 10px;
+    width: 40px;
 }
 
 #assetsTable td {
     text-align: center;
     border-bottom: 1px solid #ddd;
+    font-size: 1.2em;
 }
 
 .authorLabel {
@@ -206,5 +206,13 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.fa-user:before {
+    content: "\f007";
+}
+
+.fa-building:before {
+    content: "\f007";
 }
 
