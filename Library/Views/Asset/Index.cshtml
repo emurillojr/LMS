@@ -11,14 +11,24 @@
 }
 
 <div id="assets">
-    <h2 class="text-muted">Asset Index</h2>
+    <h2 class="text-muted">Asset Index List</h2>
+    <br />
+    <form asp-action="Index" method="get">
+        <div class="form-actions no-color">
+            <p>
+                Find By Book Title : <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+                <input type="submit" value="Search" class="btn btn-default" />
+            </p>
+        </div>
+    </form>
+
     <div id="assetsTable">
-        <table class="table table-condensed" id="catalogIndexTable">
+        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp customTable" id="catalogIndexTable">
             <thead>
                 <tr>
                     <th>Image</th>
                     <th>Title</th>
-                    <th>Author / Director</th>
+                    <th>Author</th>
                     <th>Dewey Call Number</th>
                 </tr>
             </thead>
@@ -40,4 +50,5 @@
             </tbody>
         </table>
     </div>
+    <a asp-action="Index">Back to Asset Index List</a>
 </div>

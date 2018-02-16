@@ -15,12 +15,30 @@ namespace Library.Controllers
             _context = context;
         }
 
+        //public string GetAddress(int id)
+        //{
+        //    return _context.LibraryBranches
+        //            .FirstOrDefault(a => a.Id == id).Address;
+        //}
+
+        //public string GetPhoneNumber(int id)
+        //{
+        //    return _context.LibraryBranches
+        //             .FirstOrDefault(a => a.Id == id).Telephone;
+        //}
+
         Branch IBranch.Get(int branchId)
         {
             return _context.LibraryBranches
                 .Include(b => b.Patrons)
                 .Include(b => b.LibraryAssets).FirstOrDefault(b => b.Id == branchId);
         }
+
+        //IEnumerable<Branch> IBranch.GetAddress(int id)
+        //{
+        //    return _context.LibraryBranches
+        //        .Include(b => b.Address);
+        //}
 
         IEnumerable<Branch> IBranch.GetAll()
         {
@@ -44,5 +62,11 @@ namespace Library.Controllers
                 .FirstOrDefault(b => b.Id == branchId)
                 .Patrons;
         }
+
+        //IEnumerable<Branch> IBranch.GetPhoneNumber(int id)
+        //{
+        //    return _context.LibraryBranches
+        //        .Include(b => b.Telephone);
+        //}
     }
 }

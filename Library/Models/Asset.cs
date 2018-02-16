@@ -2,7 +2,7 @@
 
 namespace Library.Models
 {
-    public abstract class Asset // books videos mags etc
+    public class Asset // books
     {
         public int Id { get; set; }
 
@@ -14,8 +14,20 @@ namespace Library.Models
 
         [Required]
         public decimal Cost { get; set; }
+
         public string ImageUrl { get; set; }
+
         public int NumberOfCopies { get; set; }
+
+        [Required]
+        public string ISBN { get; set; }
+
+        [Required]
+        public string Author { get; set; }
+
+        [Required]
+        public string DeweyIndex { get; set; }
+
         public virtual Branch Location { get; set; }  // foriegn key relationship between Library asset in a certain branch
     }
 }

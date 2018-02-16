@@ -14,23 +14,24 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 }
 
-<div class="container">
-    <div class="header clearfix detailHeading">
-        <h2 class="text-muted">Patron Information</h2>
-    </div>
-    <div class="jumbotron">
-        <div class="row">
-            <div class="col-md-4">
-                <div>
-                    @*@Model.FirstName @Model.LastName*@
-                    <h2>@Model.FullName</h2>
-                    <div class="patronContact">
-                        <div id="patronAddress">Address: @Model.Address</div>
-                        <div id="patronTel">Telephone: @Model.Telephone</div>
-                        <div id="patronLibrary">Home Library: @Model.HomeLibraryBranch</div>
+    <div class="container">
+        <div class="header clearfix detailHeading">
+            <h2 class="text-muted">Patron Information</h2>
+        </div>
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-md-4">
+                    <div>
+                        @*@Model.FirstName @Model.LastName*@
+                        <h2>@Model.FullName</h2>
+                        <div class="patronContact">
+                            <div id="patronAddress">Address: @Model.Address</div>
+                            <div id="patronTel">Telephone: @Model.Telephone</div>
+                            <div id="patronLibrary">Home Library: @Model.HomeLibraryBranch</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <a asp-action="Index">Back to Patron Index List</a>
     </div>
-</div>

@@ -25,7 +25,7 @@
         <div class="col-md-4">
             <p id="itemTitle">@Model.Title</p>
             <p id="itemAuthor">@Model.AuthorOrDirector</p>
-            <p id="itemType">@Model.Type</p>
+            <p id="itemType">Book</p>
         </div>
         <div class="col-md-4 detailInfo">
             <table>
@@ -37,8 +37,14 @@
                     <td class="itemLabel">Call Number: </td>
                     <td class="itemValue">@Model.DeweyCallNumber</td>
                 </tr>
+                <tr>
+                    <td class="itemLabel">Location: </td>
+                    <td class="itemValue">@Model.CurrentLocation</td>
+                </tr>
             </table>
         </div>
     </div>
 </div>
+@*<a class="btn btn-success" role="button" asp-controller="AssetsCRUD" asp-action="Edit" asp-route-id="@Model.AssetId.ToString()">Edit</a> |*@ 
+<a asp-action="Index">Back to Asset Index List</a>
 

@@ -1,6 +1,5 @@
 ﻿using Library.Interfaces;
 using Library.Models;
-using Library.Models.Items;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,9 +34,9 @@ namespace Library.Controllers
 
         public string GetDeweyIndex(int id) // return dewey index of asset type book
         {
-            if (_context.Books.Any(book => book.Id == id))
+            if (_context.LibraryAssets.Any(book => book.Id == id))
             {
-                return _context.Books
+                return _context.LibraryAssets
                     .FirstOrDefault(book => book.Id == id).DeweyIndex;
             }
             else return "";
@@ -45,9 +44,9 @@ namespace Library.Controllers
 
         public string GetIsbn(int id) // return isbn of asset type book
         {
-            if (_context.Books.Any(a => a.Id == id))
+            if (_context.LibraryAssets.Any(a => a.Id == id))
             {
-                return _context.Books
+                return _context.LibraryAssets
                     .FirstOrDefault(a => a.Id == id).ISBN;
             }
             else return "";
@@ -55,29 +54,34 @@ namespace Library.Controllers
 
         public string GetTitle(int id)
         {
-            return _context.Books
+            return _context.LibraryAssets
                     .FirstOrDefault(a => a.Id == id).Title;
         }
 
-        public string GetType(int id)
-        {
-            var book = _context.LibraryAssets.OfType<Book>()
-                .Where(b => b.Id == id);
-            return book.Any() ? "Book" : "Video";
-        }
+        //public string GetType(int id)
+        //{
+        //    var book = _context.LibraryAssets.OfType<Book>()
+        //        .Where(b => b.Id == id);
+        //    return book.Any() ? "Book" : "Video";
+        //}
 
         public string GetAuthorOrDirector(int id)
         {
-            var isBook = _context.LibraryAssets.OfType<Book>()
-                .Where(asset => asset.Id == id).Any();
 
-            var isVideo = _context.LibraryAssets.OfType<Video>()
-                .Where(asset => asset.Id == id).Any();
+            return _context.LibraryAssets
+                        .FirstOrDefault(a => a.Id == id).Author;
 
-            return isBook ?
-                _context.Books.FirstOrDefault(book => book.Id == id).Author :
-                _context.Videos.FirstOrDefault(video => video.Id == id).Director
-                ?? "Unknown";
+
+            //var isBook = _context.LibraryAssets.OfType<Asset>()
+            //    .Where(asset => asset.Id == id).Any();
+
+            //var isVideo = _context.LibraryAssets.OfType<Asset>()
+            //    .Where(asset => asset.Id == id).Any();
+
+            //return isBook ?
+            //    _context.LibraryAssets.FirstOrDefault(book => book.Id == id).Author
+            //_context.LibraryAssets.FirstOrDefault(video => video.Id == id).Director
+            //?? "Unknown";
         }
     }
 }

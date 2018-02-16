@@ -10,7 +10,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 }
 
-<h2 class="text-muted">Patron Index</h2>
+<h2 class="text-muted">Patron Index List</h2>
+<br />
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find By Last Name : <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+            <input type="submit" value="Search" class="btn btn-default" />
+        </p>
+    </div>
+</form>
+
 <div id="patronIndex">
     <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp customTable" id="patronIndexTable">
         <thead>
@@ -34,3 +44,5 @@
         </tbody>
     </table>
 </div>
+<br />
+<a asp-action="Index">Back to Patron Index List</a>

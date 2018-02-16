@@ -3,6 +3,7 @@ using Library.ViewModels.Branch;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Library.Controllers
 {
@@ -17,9 +18,20 @@ namespace Library.Controllers
             _branch = branch;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            var branches = _branch.GetAll().Select(branch => new BranchDetailModel
+            var branchModels = from c in _branch.GetAll().ToList() select c;
+            ViewData["CurrentFilter"] = searchString;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                branchModels = branchModels.Where(c => c.Name.ToUpper().Contains(searchString.ToUpper()));
+            }
+
+
+            var branches = branchModels
+                .Select(branch => new BranchDetailModel
+            
             {
                 Id = branch.Id,
                 Name = branch.Name,
@@ -55,19 +67,19 @@ namespace Library.Controllers
             return View(model);
         }
 
-        public ActionResult ListofBranches(string searchString)
-        {
-            // https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/sort-filter-page
-            //var branch = _branch.GetAll().ToList();  // list of entire catalog of library assets
+        //public ActionResult ListofBranches(string searchString)
+        //{
+        //    // https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/sort-filter-page
+        //    //var branch = _branch.GetAll().ToList();  // list of entire catalog of library assets
 
-            var branch = from b in _branch.GetAll().ToList() select b;
-            ViewData["CurrentFilter"] = searchString;
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                branch = branch.Where(b => b.Name.ToUpper().Contains(searchString.ToUpper()));
-            }
+        //    var branch = from b in _branch.GetAll().ToList() select b;
+        //    ViewData["CurrentFilter"] = searchString;
+        //    if (!String.IsNullOrEmpty(searchString))
+        //    {
+        //        branch = branch.Where(b => b.Name.ToUpper().Contains(searchString.ToUpper()));
+        //    }
 
-            return View(branch);
-        }
+        //    return View(branch);
+        //}
     }
 }
