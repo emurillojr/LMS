@@ -16,8 +16,12 @@
 <form asp-action="Index" method="get">
     <div class="form-actions no-color">
         <p>
-            Find By Last Name : <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
-            <input type="submit" value="Search" class="btn btn-dark" />
+            <div class="searchThis">
+                <input type="text" name="SearchString" placeholder="Search By Last Name" value="@ViewData["currentFilter"]" id="searchPlease" />
+                <button type="submit" class="btn btn-dark">
+                    <i class="fa fa-search fa-2x"></i>
+                </button>
+                </div>
         </p>
     </div>
 </form>
@@ -37,7 +41,7 @@
             {
                 <tr class="assetRow">
                     <td>
-                        <a asp-controller="Patron" asp-action="Detail" asp-route-id="@patron.Id"><i class="fas fa-user-circle fa-3x"></i></a>
+                        <a asp-controller="Patron" asp-action="Detail" asp-route-id="@patron.Id"><i class="fas fa-user-circle fa-2x" style="color:black"></i></a>
                     </td>
                     <td>@patron.LastName</td>
                     <td>@patron.FirstName</td>

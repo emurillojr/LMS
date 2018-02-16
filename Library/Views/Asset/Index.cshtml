@@ -17,8 +17,12 @@
     <form asp-action="Index" method="get">
         <div class="form-actions no-color">
             <p>
-                Find By Book Title : <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
-                <input type="submit" value="Search" class="btn btn-dark" />
+                <div class="searchThis">
+                    <input type="text" name="SearchString" placeholder="Search By Book Title"   value="@ViewData["currentFilter"]"  id="searchPlease"/>
+                    <button type="submit" class="btn btn-dark">
+                        <i class="fa fa-search fa-2x"></i>
+                    </button>
+                </div>
             </p>
         </div>
     </form>
@@ -27,7 +31,7 @@
         <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp customTable" id="catalogIndexTable">
             <thead>
                 <tr>
-                    <th>Image</th>
+                    <th>Profile Link</th>
                     <th>Title</th>
                     <th>Author</th>
                     <th>Dewey Call Number</th>
@@ -37,10 +41,10 @@
                 @foreach (var asset in Model.Assets)
                 {
                     <tr class="assetRow">
-                        <td >
+                        <td>
                             @* routes route *@
                             <a asp-controller="Asset" asp-action="Detail" asp-route-id="@asset.Id">
-                                <img src="@asset.ImageUrl" class="imageCell" />
+                                <i class="fas fa-book fa-2x" style="color:black"></i>
                             </a>
                         </td>
                         <td class="">@asset.Title</td>

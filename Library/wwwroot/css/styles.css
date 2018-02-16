@@ -119,7 +119,7 @@
 }
 
 #assetsTable td {
-    text-align: center;
+    /*text-align: center; */
     border-bottom: 1px solid #ddd;
     font-size: 1.2em;
 }
@@ -216,3 +216,12 @@
     content: "\f007";
 }
 
+.searchThis #searchPlease {
+    border-radius: 3px;
+    border: 1px silver solid;
+    padding-left: 10px;
+    font-weight: bolder;
+    color: #bcbcbc;
+    height: 40px;
+    width: 225px;
+}
