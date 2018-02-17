@@ -3,7 +3,7 @@ using Library.ViewModels.Asset;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace Library.Controllers
 {
@@ -15,7 +15,7 @@ namespace Library.Controllers
             _assets = assets;
         }
 
-        public async Task<IActionResult> Index(string searchString)
+        public IActionResult Index(string searchString)
         {
             //var assetModels = _assets.GetAll();  // list of entire catalog of library assets
             var assetModels = from c in _assets.GetAll().ToList() select c;

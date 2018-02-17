@@ -40,10 +40,6 @@ D:\GITFILES\LMS\Library\bin\Debug\netcoreapp2.0\Library.runtimeconfig.json
 D:\GITFILES\LMS\Library\bin\Debug\netcoreapp2.0\Library.runtimeconfig.dev.json
 D:\GITFILES\LMS\Library\bin\Debug\netcoreapp2.0\Library.dll
 D:\GITFILES\LMS\Library\bin\Debug\netcoreapp2.0\Library.pdb
-D:\GITFILES\LMS\Library\bin\Debug\netcoreapp2.0\LibraryData.dll
-D:\GITFILES\LMS\Library\bin\Debug\netcoreapp2.0\LibraryServices.dll
-D:\GITFILES\LMS\Library\bin\Debug\netcoreapp2.0\LibraryData.pdb
-D:\GITFILES\LMS\Library\bin\Debug\netcoreapp2.0\LibraryServices.pdb
 D:\GITFILES\LMS\Library\obj\Debug\netcoreapp2.0\Library.csprojResolveAssemblyReference.cache
 D:\GITFILES\LMS\Library\obj\Debug\netcoreapp2.0\Library.csproj.CoreCompileInputs.cache
 D:\GITFILES\LMS\Library\obj\Debug\netcoreapp2.0\Library.AssemblyInfoInputs.cache

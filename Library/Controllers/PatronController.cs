@@ -16,7 +16,7 @@ namespace Library.Controllers
             _patron = patron;
         }
 
-        public async Task<IActionResult> Index(string searchString)
+        public IActionResult Index(string searchString)
         {
             //var allPatrons = _patron.GetAll(); // stores all patrons
             var allPatrons = from c in _patron.GetAll().ToList() select c;

@@ -18,7 +18,7 @@
 
 <h2>Create</h2>
 
-<h4>LibraryAsset</h4>
+<h4>Asset</h4>
 <hr />
 
 <div class="container">
@@ -26,47 +26,47 @@
     <form asp-action="Create">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group">
-            <label asp-for="Title" class="control-label"></label>
-            <div class="col-sm-10">
+            <label asp-for="Title" class="control-label">Title</label>
+            <div class="col-sm-5">
                 <input asp-for="Title" class="form-control" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="Year" class="control-label"></label>
-            <div class="col-sm-10">
+            <label asp-for="Year" class="control-label">Year</label>
+            <div class="col-sm-5">
                 <input asp-for="Year" class="form-control" />
                 <span asp-validation-for="Year" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="Cost" class="control-label"></label>
-            <div class="col-sm-10">
+            <label asp-for="Cost" class="control-label">Cost</label>
+            <div class="col-sm-5">
                 <input asp-for="Cost" class="form-control" />
                 <span asp-validation-for="Cost" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="ImageUrl" class="control-label"></label>
-            <div class="col-sm-10">
+            <label asp-for="ImageUrl" class="control-label">Image</label>
+            <div class="col-sm-5">
                 <input asp-for="ImageUrl" class="form-control" />
                 <span asp-validation-for="ImageUrl" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="NumberOfCopies" class="control-label"></label>
-            <div class="col-sm-10">
+            <label asp-for="NumberOfCopies" class="control-label"># Of Copies</label>
+            <div class="col-sm-5">
                 <input asp-for="NumberOfCopies" class="form-control" />
                 <span asp-validation-for="NumberOfCopies" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
-            <input type="submit" value="Create" class="btn btn-success" />
+            <input type="submit" value="Create" class="btn btn-lg btn-success" />
         </div>
     </form>
-
+    <br />
     <div>
-        <a asp-action="Index">Back to List</a>
+        <a asp-action="Index">Back to CRUD Asset List</a>
     </div>
 </div>
 

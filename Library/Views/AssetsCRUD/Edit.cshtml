@@ -18,46 +18,50 @@
 
 <h4>Asset</h4>
 <hr />
-<div class="row">
-    <div class="col-sm-12">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            
-                <div class="form-group">
-                    <label asp-for="Title" class="control-label">Title</label>
-                    <input asp-for="Title" class="form-control" />
-                    <span asp-validation-for="Title" class="text-danger"></span>
-            </div>
-                <div class="form-group">
-                    <label asp-for="Year" class="control-label">Year</label>
-                    <input asp-for="Year" class="form-control" />
-                    <span asp-validation-for="Year" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Cost" class="control-label">Cost</label>
-                    <input asp-for="Cost" class="form-control" />
-                    <span asp-validation-for="Cost" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ImageUrl" class="control-label">Image Url</label>
-                    <input asp-for="ImageUrl" class="form-control" />
-                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="NumberOfCopies" class="control-label"># of Copies</label>
-                    <input asp-for="NumberOfCopies" class="form-control" />
-                    <span asp-validation-for="NumberOfCopies" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Save" class="btn btn-success" />
-                </div>
-        </form>
-    </div>
-</div>
+<div class="container">
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Id" />
 
-<div>
-    <a asp-action="Index">Back to full CRUD List</a>
+        <div class="form-group">
+            <label asp-for="Title" class="control-label">Title</label>
+            <div class="col-sm-5">
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Year" class="control-label">Year</label>
+            <div class="col-sm-5">
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Cost" class="control-label">Cost</label>
+            <div class="col-sm-5">
+                <input asp-for="Cost" class="form-control" />
+                <span asp-validation-for="Cost" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ImageUrl" class="control-label">Image Url</label>
+            <div class="col-sm-5">
+                <input asp-for="ImageUrl" class="form-control" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="NumberOfCopies" class="control-label"># of Copies</label>
+            <div class="col-sm-5">
+                <input asp-for="NumberOfCopies" class="form-control" />
+                <span asp-validation-for="NumberOfCopies" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-success" />
+        </div>
+    </form>
 </div>
 <br />
 <div>

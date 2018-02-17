@@ -3,7 +3,6 @@ using Library.ViewModels.Branch;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Library.Controllers
 {
@@ -18,7 +17,7 @@ namespace Library.Controllers
             _branch = branch;
         }
 
-        public async Task<IActionResult> Index(string searchString)
+        public IActionResult Index(string searchString)
         {
             var branchModels = from c in _branch.GetAll().ToList() select c;
             ViewData["CurrentFilter"] = searchString;
@@ -31,13 +30,13 @@ namespace Library.Controllers
 
             var branches = branchModels
                 .Select(branch => new BranchDetailModel
-            
-            {
-                Id = branch.Id,
-                Name = branch.Name,
-                NumberOfAssets = _branch.GetAssets(branch.Id).Count(),
-                NumberOfPatrons = _branch.GetPatrons(branch.Id).Count()
-            });
+
+                {
+                    Id = branch.Id,
+                    Name = branch.Name,
+                    NumberOfAssets = _branch.GetAssets(branch.Id).Count(),
+                    NumberOfPatrons = _branch.GetPatrons(branch.Id).Count()
+                });
 
             var model = new BranchIndexModel()
             {
