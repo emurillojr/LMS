@@ -50,13 +50,16 @@ namespace Library.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id, Title, Year, Cost, ImageUrl, NumberOfCopies, ISBN, Author, DeweyIndex, Location")] Asset libraryAsset)
+        public async Task<IActionResult> Create([Bind("Id, Title, Year, Cost, ImageUrl, NumberOfCopies, ISBN, Author, DeweyIndex, LocationId")] Asset libraryAsset)
         {
             if (ModelState.IsValid)
             {
+
+                //string Location = "1";
+           
                 _context.Add(libraryAsset);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Asset");
             }
             return View(libraryAsset);
         }
@@ -82,7 +85,7 @@ namespace Library.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id, Title, Year, Cost, ImageUrl, NumberOfCopies, ISBN, Author, DeweyIndex, Location")] Asset libraryAsset)
+        public async Task<IActionResult> Edit(int id, [Bind("Id, Title, Year, Cost, ImageUrl, NumberOfCopies, ISBN, Author, DeweyIndex, LocationId")] Asset libraryAsset)
         {
             if (id != libraryAsset.Id)
             {
@@ -107,7 +110,7 @@ namespace Library.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Asset");
             }
             return View(libraryAsset);
         }
@@ -138,7 +141,8 @@ namespace Library.Controllers
             var libraryAsset = await _context.LibraryAssets.SingleOrDefaultAsync(m => m.Id == id);
             _context.LibraryAssets.Remove(libraryAsset);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            //return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index", "Asset");
         }
 
         private bool LibraryAssetExists(int id)

@@ -49,7 +49,7 @@
         <div class="form-group">
             <label asp-for="ImageUrl" class="control-label">Image</label>
             <div class="col-sm-5">
-                <input asp-for="ImageUrl" class="form-control" readonly placeholder="/images/default.png" value="/images/default.png" />
+                <input asp-for="ImageUrl" class="form-control" readonly value="/images/default.png" />
                 <span asp-validation-for="ImageUrl" class="text-danger"></span>
             </div>
         </div>
@@ -61,9 +61,9 @@
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="ISBN" class="control-label">ISBN</label>
+            <label asp-for="ISBN" class="control-label">ISBN 13 digit #</label>
             <div class="col-sm-5">
-                <input asp-for="ISBN" class="form-control" />
+                <input asp-for="ISBN" class="form-control" placeholder="1234567890123" />
                 <span asp-validation-for="ISBN" class="text-danger"></span>
             </div>
         </div>
@@ -75,19 +75,19 @@
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="DeweyIndex" class="control-label">Dewey Index</label>
+            <label asp-for="DeweyIndex" class="control-label">Dewey Index 6 digit #</label>
             <div class="col-sm-5">
 
-                <input asp-for="DeweyIndex" class="form-control" />
+                <input asp-for="DeweyIndex" class="form-control" placeholder="123.456" />
                 <span asp-validation-for="DeweyIndex" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="Location" class="control-label">Location Code</label>
+            <label asp-for="LocationId" class="control-label">Location Code</label>
             <div class="col-sm-5">
 
-                <input asp-for="Location" class="form-control" placeholder="1 for Providence, 2 for Fox Point, 3 for Washington" />
-                <span asp-validation-for="Location" class="text-danger"></span>
+                <input asp-for="LocationId" class="form-control" readonly value=1 />
+                <span asp-validation-for="LocationId" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">

@@ -32,9 +32,10 @@ namespace Library.Controllers
                     Id = a.Id,
                     ImageUrl = a.ImageUrl,
                     AuthorOrDirector = _assets.GetAuthorOrDirector(a.Id),
-                    DeweyCallNumber = _assets.GetDeweyIndex(a.Id),
+                    //DeweyCallNumber = _assets.GetDeweyIndex(a.Id),
                     Title = a.Title,
-                    CurrentLocation = _assets.GetCurrentLocation(a.Id).Name
+                    ISBN = _assets.GetIsbn(a.Id)
+                    //CurrentLocation = _assets.GetCurrentLocation(a.Id).Name
                 });
 
             var model = new AssetIndexModel()

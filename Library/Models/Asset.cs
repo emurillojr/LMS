@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Library.Models
 {
@@ -28,6 +29,9 @@ namespace Library.Models
 
         public string DeweyIndex { get; set; }
 
-        public virtual Branch Location { get; set; }  // foriegn key relationship between Library asset in a certain branch
+        [ForeignKey("Branch")]
+        public int LocationId { get; set; }
+
+        public Branch Location { get; set; }  // foriegn key relationship between Library asset in a certain branch
     }
 }

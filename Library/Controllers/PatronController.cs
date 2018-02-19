@@ -33,6 +33,7 @@ namespace Library.Controllers
                     Id = p.Id,
                     FirstName = p.FirstName,
                     LastName = p.LastName,
+
                     HomeLibraryBranch = p.HomeLibraryBranch.Name
                 }).ToList();
 
@@ -55,6 +56,7 @@ namespace Library.Controllers
                 Address = patron.Address,
                 HomeLibraryBranch = patron.HomeLibraryBranch.Name,
                 Telephone = patron.TelephoneNumber,
+                DateOfBirth = patron.DateOfBirth
             };
 
             return View(model);

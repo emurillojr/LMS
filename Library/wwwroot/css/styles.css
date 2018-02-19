@@ -225,3 +225,23 @@
     height: 40px;
     width: 225px;
 }
+
+
+.fafa {
+    margin-right: 20px
+}
+
+.btn{
+    margin-bottom: 5px;
+    margin-left:10px;
+}
+
+.row1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+
+}

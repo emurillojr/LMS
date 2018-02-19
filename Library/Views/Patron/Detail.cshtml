@@ -38,9 +38,11 @@
                     @*@Model.FirstName @Model.LastName*@
                     <h2>@Model.FullName</h2>
                     <div class="patronContact">
+                        <div id="patronDOB">Date Of Birth: @Model.DateOfBirth.ToShortDateString()</div>
                         <div id="patronAddress">Address: @Model.Address</div>
                         <div id="patronTel">Telephone: @Model.Telephone</div>
                         <div id="patronLibrary">Home Library: @Model.HomeLibraryBranch</div>
+                        
                     </div>
                 </div>
             </div>
