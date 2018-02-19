@@ -6,10 +6,10 @@ using System.Linq;
 
 namespace Library.Controllers
 {
-    public class AssetService : IAsset // implement ILibraryAsset interface
+    public class AssetService : IAsset // implement IAsset interface
     {
-        private LibraryContext _context; // private reference to DBContext
-        public AssetService(LibraryContext context) // constructor that takes in context - gives access to all the methods on DBContext. 
+        private LibraryContext _context; // private reference to DBContext in LibraryContext class
+        public AssetService(LibraryContext context) // constructor that takes in LibraryContext aka DBContext - gives access to all the methods on DBContext. 
         {
             _context = context;
         }

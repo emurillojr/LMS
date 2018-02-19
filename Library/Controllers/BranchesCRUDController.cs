@@ -15,13 +15,13 @@ namespace Library.Controllers
             _context = context;
         }
 
-        // GET: LibraryBranchesCRUD
+        // GET: BranchesCRUD
         public async Task<IActionResult> Index()
         {
             return View(await _context.LibraryBranches.ToListAsync());
         }
 
-        // GET: LibraryBranchesCRUD/Details/5
+        // GET: BranchesCRUD/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -39,13 +39,13 @@ namespace Library.Controllers
             return View(libraryBranch);
         }
 
-        // GET: LibraryBranchesCRUD/Create
+        // GET: BranchesCRUD/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: LibraryBranchesCRUD/Create
+        // POST: BranchesCRUD/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -61,7 +61,7 @@ namespace Library.Controllers
             return View(libraryBranch);
         }
 
-        // GET: LibraryBranchesCRUD/Edit/5
+        // GET: BranchesCRUD/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,7 +77,7 @@ namespace Library.Controllers
             return View(libraryBranch);
         }
 
-        // POST: LibraryBranchesCRUD/Edit/5
+        // POST: BranchesCRUD/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -112,7 +112,7 @@ namespace Library.Controllers
             return View(libraryBranch);
         }
 
-        // GET: LibraryBranchesCRUD/Delete/5
+        // GET: BranchesCRUD/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -130,7 +130,7 @@ namespace Library.Controllers
             return View(libraryBranch);
         }
 
-        // POST: LibraryBranchesCRUD/Delete/5
+        // POST: BranchesCRUD/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

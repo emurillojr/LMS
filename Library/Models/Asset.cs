@@ -19,13 +19,13 @@ namespace Library.Models
 
         public int NumberOfCopies { get; set; }
 
-        [Required]
+
         public string ISBN { get; set; }
 
-        [Required]
+
         public string Author { get; set; }
 
-        [Required]
+
         public string DeweyIndex { get; set; }
 
         public virtual Branch Location { get; set; }  // foriegn key relationship between Library asset in a certain branch

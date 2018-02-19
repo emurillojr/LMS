@@ -16,11 +16,11 @@
     <div class="form-actions no-color">
         <p>
             <div class="searchThis">
-                <input type="text" name="SearchString" placeholder="Search By Branch Name" value="@ViewData["currentFilter"]" id="searchPlease"/>
+                <input type="text" name="SearchString" placeholder="Search By Branch Name" value="@ViewData["currentFilter"]" id="searchPlease" />
                 <button type="submit" class="btn btn-dark">
                     <i class="fa fa-search fa-2x"></i>
                 </button>
-                </div>
+            </div>
         </p>
     </div>
 </form>
@@ -40,7 +40,7 @@
             {
                 <tr class="assetRow">
                     <td>
-                        <a asp-controller="Branch" asp-action="Detail" asp-route-id="@branch.Id"><i class="fas fa-building fa-2x" style="color:black"></i></a>
+                        <a asp-controller="Branch" asp-action="Detail" asp-route-id="@branch.Id"><i class="fas fa-building fa-2x" style="color:lightslategray"></i></a>
                     </td>
                     <td>@branch.Name</td>
                     <td>@branch.NumberOfAssets</td>

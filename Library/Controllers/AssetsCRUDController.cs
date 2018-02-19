@@ -15,13 +15,13 @@ namespace Library.Controllers
             _context = context;
         }
 
-        // GET: LibraryAssetsCRUD
+        // GET: AssetsCRUD
         public async Task<IActionResult> Index()
         {
             return View(await _context.LibraryAssets.ToListAsync());
         }
 
-        // GET: LibraryAssetsCRUD/Details/5
+        // GET: AssetsCRUD/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -30,7 +30,7 @@ namespace Library.Controllers
             }
 
             var libraryAsset = await _context.LibraryAssets
-                .SingleOrDefaultAsync(m => m.Id == id);
+            .SingleOrDefaultAsync(m => m.Id == id);
             if (libraryAsset == null)
             {
                 return NotFound();
@@ -39,18 +39,18 @@ namespace Library.Controllers
             return View(libraryAsset);
         }
 
-        // GET: LibraryAssetsCRUD/Create
+        // GET: AssetsCRUD/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: LibraryAssetsCRUD/Create
+        // POST: AssetsCRUD/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id, Title, Year, Cost, ImageUrl, NumberOfCopies, LocationId, Author, DeweyIndex, ISBN")] Asset libraryAsset)
+        public async Task<IActionResult> Create([Bind("Id, Title, Year, Cost, ImageUrl, NumberOfCopies, ISBN, Author, DeweyIndex, Location")] Asset libraryAsset)
         {
             if (ModelState.IsValid)
             {
@@ -61,7 +61,7 @@ namespace Library.Controllers
             return View(libraryAsset);
         }
 
-        // GET: LibraryAssetsCRUD/Edit/5
+        // GET: AssetsCRUD/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,12 +77,12 @@ namespace Library.Controllers
             return View(libraryAsset);
         }
 
-        // POST: LibraryAssetsCRUD/Edit/5
+        // POST: AssetsCRUD/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id, Title, Year, Cost, ImageUrl, NumberOfCopies, LocationId, Author, DeweyIndex, ISBN")] Asset libraryAsset)
+        public async Task<IActionResult> Edit(int id, [Bind("Id, Title, Year, Cost, ImageUrl, NumberOfCopies, ISBN, Author, DeweyIndex, Location")] Asset libraryAsset)
         {
             if (id != libraryAsset.Id)
             {
@@ -112,7 +112,7 @@ namespace Library.Controllers
             return View(libraryAsset);
         }
 
-        // GET: LibraryAssetsCRUD/Delete/5
+        // GET: AssetsCRUD/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -130,7 +130,7 @@ namespace Library.Controllers
             return View(libraryAsset);
         }
 
-        // POST: LibraryAssetsCRUD/Delete/5
+        // POST: AssetsCRUD/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

@@ -14,45 +14,91 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>Asset</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Year)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Year)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Cost)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Cost)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ImageUrl)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ImageUrl)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.NumberOfCopies)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.NumberOfCopies)
-        </dd>
-    </dl>
+<div class="container">
+    <div class="header clearfix detailHeading">
+        <h2 class="text-muted">Asset Information</h2>
+    </div>
 </div>
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-4">
+            <div>
+                <img class="detailImage" src="@Model.ImageUrl" />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <p id="itemTitle">@Model.Title</p>
+            <p id="itemAuthor">@Model.Author</p>
+            <p id="itemType">Book</p>
+        </div>
+        <div class="col-md-4 detailInfo">
+            <table>
+                <tr>
+                    <td class="itemLabel">Year </td>
+                    <td class="itemValue">@Model.Year</td>
+                </tr>
+                <tr>
+                    <td class="itemLabel">ISBN: </td>
+                    <td class="itemValue">@Model.ISBN</td>
+                </tr>
+                <tr>
+                    <td class="itemLabel">Call Number: </td>
+                    <td class="itemValue">@Model.DeweyIndex</td>
+                </tr>
+                @*<tr>
+                        <td class="itemLabel">Location: </td>
+                        <td class="itemValue">@Model.Location.Name</td>
+                    </tr>*@
+                <tr>
+                    <td class="itemLabel"># of Copies: </td>
+                    <td class="itemValue">@Model.NumberOfCopies</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+@*<div>
+        <h4>Asset</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Year)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Year)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Cost)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Cost)
+            </dd>
+            <dt>
+                <img class="detailImage" src="@Model.ImageUrl" />
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ImageUrl)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.NumberOfCopies)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.NumberOfCopies)
+            </dd>
+        </dl>
+    </div>*@
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.Id"><i class="fas fa-edit fa-2x" style="color:darkorange"></i></a>
+    <a asp-action="Delete" asp-route-id="@Model.Id"><i class="fas fa-trash-alt fa-2x" style="color:darkred"></i></a> |
+    @*<a asp-action="Index"> Back to Index CRUD List</a>*@
+    <a asp-controller="Asset" asp-action="Index">Back to Asset Index List</a>
 </div>

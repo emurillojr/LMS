@@ -34,6 +34,7 @@ namespace Library.Controllers
                     AuthorOrDirector = _assets.GetAuthorOrDirector(a.Id),
                     DeweyCallNumber = _assets.GetDeweyIndex(a.Id),
                     Title = a.Title,
+                    CurrentLocation = _assets.GetCurrentLocation(a.Id).Name
                 });
 
             var model = new AssetIndexModel()
@@ -44,9 +45,9 @@ namespace Library.Controllers
             return View(model);
         }
 
-        public IActionResult Detail(int id)  // localhost:#####/Catalog/Detail/123    controller / Action / Id
+        public IActionResult Detail(int id)  // localhost:#####/Asset/Detail/123    controller/Action/Id#
         {
-            var asset = _assets.GetById(id);  // returns asset from database
+            var asset = _assets.GetById(id);  // returns asset from database by id
 
             var model = new AssetDetailModel
             {
@@ -55,9 +56,9 @@ namespace Library.Controllers
                 Year = asset.Year,
                 Cost = asset.Cost,
                 ImageUrl = asset.ImageUrl,
-                AuthorOrDirector = _assets.GetAuthorOrDirector(id), // use Library Asset Service to get AuthorOrDirector
-                DeweyCallNumber = _assets.GetDeweyIndex(id),  // use Library Asset Service to get GetDeweyIndex
-                ISBN = _assets.GetIsbn(id), // use Library Asset Service to get ISBN
+                AuthorOrDirector = _assets.GetAuthorOrDirector(id), // use Asset Service to get AuthorOrDirector
+                DeweyCallNumber = _assets.GetDeweyIndex(id),  // use Asset Service to get GetDeweyIndex
+                ISBN = _assets.GetIsbn(id), // use Asset Service to get ISBN
                 CurrentLocation = _assets.GetCurrentLocation(id).Name
             };
 

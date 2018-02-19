@@ -18,7 +18,7 @@
         <div class="form-actions no-color">
             <p>
                 <div class="searchThis">
-                    <input type="text" name="SearchString" placeholder="Search By Book Title"   value="@ViewData["currentFilter"]"  id="searchPlease"/>
+                    <input type="text" name="SearchString" placeholder="Search By Book Title" value="@ViewData["currentFilter"]" id="searchPlease" />
                     <button type="submit" class="btn btn-dark">
                         <i class="fa fa-search fa-2x"></i>
                     </button>
@@ -26,6 +26,9 @@
             </p>
         </div>
     </form>
+    <p>
+        <a asp-controller="AssetsCRUD" asp-action="Create"><i class="fas fa-plus fa-2x" style="color:forestgreen"></i></a>
+    </p>
 
     <div id="assetsTable">
         <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp customTable" id="catalogIndexTable">
@@ -35,6 +38,7 @@
                     <th>Title</th>
                     <th>Author</th>
                     <th>Dewey Call Number</th>
+                    <th>Branch Location</th>
                 </tr>
             </thead>
             <tbody>
@@ -44,12 +48,13 @@
                         <td>
                             @* routes route *@
                             <a asp-controller="Asset" asp-action="Detail" asp-route-id="@asset.Id">
-                                <i class="fas fa-book fa-2x" style="color:black"></i>
+                                <i class="fas fa-book fa-2x" style="color:lightslategray"></i>
                             </a>
                         </td>
                         <td class="">@asset.Title</td>
                         <td class="">@asset.AuthorOrDirector</td>
                         <td class="">@asset.DeweyCallNumber</td>
+                        <td class="">@asset.CurrentLocation</td>
                     </tr>
                 }
             </tbody>
