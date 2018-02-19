@@ -1,68 +1,55 @@
 ﻿@model Library.Models.Asset
 
-@{
-    ViewData["Title"] = "Delete";
-}
-
 @section Scripts{
-<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 }
 
 @section Styles{
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 }
-
 
 <div class="container">
     <div class="header clearfix detailHeading">
         <h2 class="text-muted">Delete Asset Information</h2>
-        <a asp-controller="Asset" asp-action="Detail" asp-route-id="@Model.Id"><i class="fas fa-arrow-circle-left fa-2x" style="color:black"></i></a>
-        <h3>Are you sure you want to delete this?</h3>
-    </div>
-
-    <div>
-
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Title)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Title)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Year)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Year)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Cost)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Cost)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.ImageUrl)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.ImageUrl)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.NumberOfCopies)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.NumberOfCopies)
-            </dd>
-        </dl>
-
-        <form asp-action="Delete">
-            <input type="hidden" asp-for="Id" />
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @*<a asp-action="Index">Back to List</a>*@
-            <a asp-controller="Asset" asp-action="Index">Back to Asset Index List</a>
-        </form>
+        <div class="row1">
+            <a asp-controller="Asset" asp-action="Detail" asp-route-id="@Model.Id"><i class="fas fa-arrow-circle-left fa-3x" style="color:black; margin-right:30px"></i></a>
+            <h2 style="color:orangered">Are you sure you want to delete this?</h2>
+        </div>
     </div>
 </div>
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-4">
+            <div>
+                <img class="detailImage" src="@Model.ImageUrl" />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <p id="itemTitle">@Model.Title</p>
+            <p id="itemAuthor">@Model.Author</p>
+            <p id="itemType">Book</p>
+        </div>
+        <div class="col-md-4 detailInfo">
+            <table>
+                <tr>
+                    <td class="itemLabel">ISBN: </td>
+                    <td class="itemValue">@Model.ISBN</td>
+                </tr>
+                <tr>
+                    <td class="itemLabel">Call Number: </td>
+                    <td class="itemValue">@Model.DeweyIndex</td>
+                </tr>
+                <tr>
+                    <td class="itemLabel">Location: </td>
+                    <td class="itemValue">@Model.LocationId.ToString()</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" value="Confirm Delete" class="btn btn-danger btn-lg" />
+</form>

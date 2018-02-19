@@ -83,18 +83,14 @@
         <div class="form-group">
                 <label asp-for="LocationId" class="control-label">Location Code</label>
                 <div class="col-sm-5">
-                    <input asp-for="LocationId" class="form-control" />
+                    <input asp-for="LocationId" class="form-control" min="1" max="3"/>
                     <span asp-validation-for="LocationId" class="text-danger"></span>
                 </div>
             </div>
         <div class="form-group">
-            <input type="submit" value="Save" class="btn btn-success" />
+            <input type="submit" value="Save" class="btn btn-lg btn-success" />
         </div>
     </form>
 </div>
-<br />
-<div>
-    @*<a asp-action="Index">Back to Index CRUD List</a>*@
-    <a asp-controller="Asset" asp-action="Index">Back to Asset Index List</a>
-</div>
+
 
