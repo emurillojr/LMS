@@ -22,7 +22,9 @@ namespace Library.Controllers
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                assetModels = assetModels.Where(c => c.Title.ToUpper().Contains(searchString.ToUpper()));
+                assetModels = assetModels.Where(c => c.Title.ToUpper().Contains(searchString.ToUpper())
+                                            || c.Author.ToUpper().Contains(searchString.ToUpper())
+                                            || c.ISBN.ToUpper().Contains(searchString.ToUpper()));
             }
 
             var listingResult = assetModels

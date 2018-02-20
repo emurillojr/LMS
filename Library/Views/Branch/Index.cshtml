@@ -20,7 +20,7 @@
         <form asp-action="Index" method="get">
             <div class="form-actions no-color">
                 <div class="searchThis">
-                    <input type="text" name="SearchString" placeholder="Search By Branch Name" value="@ViewData["currentFilter"]" id="searchPlease" />
+                    <input type="text" name="SearchString" placeholder="Search" value="@ViewData["currentFilter"]" id="searchPlease" />
                     <button type="submit" class="btn btn-dark">
                         <i class="fa fa-search fa-2x"></i>
                     </button>
@@ -35,8 +35,8 @@
                 <tr>
                     <th>Profile</th>
                     <th>Branch Name</th>
-                    <th>Number Of Assets</th>
-                    <th>Number of Patrons</th>
+                    <th>Address</th>
+                    <th>Phone Number</th>
                 </tr>
             </thead>
             <tbody>
@@ -47,8 +47,8 @@
                             <a asp-controller="Branch" asp-action="Detail" asp-route-id="@branch.Id"><i class="fas fa-building fa-2x" style="color:lightslategray"></i></a>
                         </td>
                         <td>@branch.Name</td>
-                        <td>@branch.NumberOfAssets</td>
-                        <td>@branch.NumberOfPatrons</td>
+                        <td>@branch.Address</td>
+                        <td>@branch.Telephone</td>
                     </tr>
                 }
             </tbody>

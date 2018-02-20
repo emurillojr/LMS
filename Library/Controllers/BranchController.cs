@@ -24,7 +24,9 @@ namespace Library.Controllers
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                branchModels = branchModels.Where(c => c.Name.ToUpper().Contains(searchString.ToUpper()));
+                branchModels = branchModels.Where(c => c.Name.ToUpper().Contains(searchString.ToUpper())
+                                                || c.Address.ToUpper().Contains(searchString.ToUpper())
+                                                || c.Telephone.Contains(searchString));
             }
 
             var branches = branchModels
@@ -33,8 +35,8 @@ namespace Library.Controllers
                 {
                     Id = branch.Id,
                     Name = branch.Name,
-                    NumberOfAssets = _branch.GetAssets(branch.Id).Count(),
-                    NumberOfPatrons = _branch.GetPatrons(branch.Id).Count()
+                    Address = branch.Address,
+                    Telephone = branch.Telephone
                 });
 
             var model = new BranchIndexModel()

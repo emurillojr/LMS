@@ -23,7 +23,10 @@ namespace Library.Controllers
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                allPatrons = allPatrons.Where(c => c.LastName.ToUpper().Contains(searchString.ToUpper()));
+                allPatrons = allPatrons.Where(c => c.LastName.ToUpper().Contains(searchString.ToUpper())
+                                            || c.FirstName.ToUpper().Contains(searchString.ToUpper())
+                                            || c.FullName.ToUpper().Contains(searchString.ToUpper())
+                                            || c.HomeLibraryBranch.Name.ToUpper().Contains(searchString.ToUpper()));
             }
 
             var patronModels = allPatrons
