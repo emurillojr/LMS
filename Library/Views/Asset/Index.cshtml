@@ -11,43 +11,39 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 }
 
-    <div id="assets">
-        <h2 class="text-muted">Asset Index List</h2>
-        <br />
-
-        <div class="row1">
-            <a asp-controller="Home" asp-action="Index"><i class="fas fa-home fa-3x" style="color:black; margin-right: 30px"></i></a>
-            <a asp-controller="AssetsCRUD" asp-action="Create"><i class="fas fa-plus fa-3x" style="color:forestgreen; margin-right: 30px"></i></a>
-            <form asp-action="Index" method="get">
-                <div class="form-actions no-color">
-                    <div class="searchThis">
-                        <input type="text" name="SearchString" placeholder="Search By Book Title" value="@ViewData["currentFilter"]" id="searchPlease" />
-                        <button type="submit" class="btn btn-dark">
-                            <i class="fa fa-search fa-2x"></i>
-                        </button>
-                    </div>
+<div id="assets">
+    <h2 class="text-muted">Asset Index List</h2>
+    <br />
+    <div class="row1">
+        <a asp-controller="Home" asp-action="Index"><i class="fas fa-home fa-3x" style="color:black; margin-right: 30px"></i></a>
+        <a asp-controller="AssetsCRUD" asp-action="Create"><i class="fas fa-plus fa-3x" style="color:forestgreen; margin-right: 30px"></i></a>
+        <form asp-action="Index" method="get">
+            <div class="form-actions no-color">
+                <div class="searchThis">
+                    <input type="text" name="SearchString" placeholder="Search By Book Title" value="@ViewData["currentFilter"]" id="searchPlease" />
+                    <button type="submit" class="btn btn-dark">
+                        <i class="fa fa-search fa-2x"></i>
+                    </button>
                 </div>
-            </form>
-        </div>
-        <br>
-
-        <div id="assetsTable">
-            <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp customTable" id="catalogIndexTable">
-                <thead>
-                    <tr>
-                        <th>Profile</th>
-                        <th>Title</th>
-                        <th>Author</th>
-                        <th>ISBN</th>
-                        @*<th>Asset Branch Location</th>*@
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var asset in Model.Assets)
+            </div>
+        </form>
+    </div>
+    <br>
+    <div id="assetsTable">
+        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp customTable" id="catalogIndexTable">
+            <thead>
+                <tr>
+                    <th>Profile</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>ISBN</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var asset in Model.Assets)
                 {
                     <tr class="assetRow">
                         <td>
-                            @* routes route *@
                             <a asp-controller="Asset" asp-action="Detail" asp-route-id="@asset.Id">
                                 <i class="fas fa-book fa-2x" style="color:lightslategray"></i>
                             </a>
@@ -55,12 +51,11 @@
                         <td class="">@asset.Title</td>
                         <td class="">@asset.AuthorOrDirector</td>
                         <td class="">@asset.ISBN</td>
-                        @*<td class="">@asset.CurrentLocation</td>*@
                     </tr>
-            }
-                </tbody>
-            </table>
-        </div>
-        <br />
-        <a asp-action="Index">Back to Branch Index List</a>
+                }
+            </tbody>
+        </table>
     </div>
+    <br />
+    <a asp-action="Index">Back to Branch Index List</a>
+</div>

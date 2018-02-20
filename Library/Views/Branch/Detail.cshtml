@@ -10,51 +10,51 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 }
 
-    <div class="container">
-        <div class="header clearfix detailHeading">
-            <h2 class="text-muted">Branch Detail Information</h2>
-            <a asp-controller="Branch" asp-action="Index"><i class="fas fa-arrow-circle-left fa-3x" style="color:black; margin-right: 30px"></i></a>
-            <a asp-controller="BranchesCRUD" asp-action="Edit" asp-route-id="@Model.Id"><i class="fas fa-edit fa-3x" style="color:darkorange; margin-right: 30px"></i></a>
-            <a asp-controller="BranchesCRUD" asp-action="Delete" asp-route-id="@Model.Id"><i class="fas fa-trash-alt fa-3x" style="color:darkred; margin-right: 30px"></i></a>
-        </div>
+<div class="container">
+    <div class="header clearfix detailHeading">
+        <h2 class="text-muted">Branch Detail Information</h2>
+        <a asp-controller="Branch" asp-action="Index"><i class="fas fa-arrow-circle-left fa-3x" style="color:black; margin-right: 30px"></i></a>
+        <a asp-controller="BranchesCRUD" asp-action="Edit" asp-route-id="@Model.Id"><i class="fas fa-edit fa-3x" style="color:darkorange; margin-right: 30px"></i></a>
+        <a asp-controller="BranchesCRUD" asp-action="Delete" asp-route-id="@Model.Id"><i class="fas fa-trash-alt fa-3x" style="color:darkred; margin-right: 30px"></i></a>
     </div>
-    <div class="jumbotron">
-        <div class="row">
-            <img src="@Model.ImageUrl" />
-        </div>
-        <div class="row branchInfo">
-            <div class="col-md-8">
-                <div>
-                    <h2>@Model.Name</h2>
-                    <div class="branchContact">
-                        <div id="branchAddress">Address: @Model.Address</div>
-                        <div id="branchTel">Telephone: @Model.Telephone</div>
-                    </div>
-                    <div id="branchDescription">
-                        <p class="caption">@Model.Description</p>
-                    </div>
+</div>
+<div class="jumbotron">
+    <div class="row">
+        <img src="@Model.ImageUrl" />
+    </div>
+    <div class="row branchInfo">
+        <div class="col-md-8">
+            <div>
+                <h2>@Model.Name</h2>
+                <div class="branchContact">
+                    <div id="branchAddress">Address: @Model.Address</div>
+                    <div id="branchTel">Telephone: @Model.Telephone</div>
+                </div>
+                <div id="branchDescription">
+                    <p class="caption">@Model.Description</p>
                 </div>
             </div>
-            <div class="col-md-4 detailInfo">
-                <table>
-                    <tr>
-                        <td class="itemLabel">Date Opened: </td>
-                        <td class="itemValue">@Model.OpenedDate</td>
-                    </tr>
-                    <tr>
-                        <td class="itemLabel">Number Of Patrons: </td>
-                        <td class="itemValue">@Model.NumberOfPatrons</td>
-                    </tr>
-                    <tr>
-                        <td class="itemLabel">Number of Assets: </td>
-                        <td class="itemValue">@Model.NumberOfAssets</td>
-                    </tr>
-                    <tr>
-                        <td class="itemLabel">Value of Assets: </td>
-                        <td class="itemValue">$@Model.TotalAssetValue</td>
-                    </tr>
-                </table>
-            </div>
+        </div>
+        <div class="col-md-4 detailInfo">
+            <table>
+                <tr>
+                    <td class="itemLabel">Date Opened: </td>
+                    <td class="itemValue">@Model.OpenedDate</td>
+                </tr>
+                <tr>
+                    <td class="itemLabel">Number Of Patrons: </td>
+                    <td class="itemValue">@Model.NumberOfPatrons</td>
+                </tr>
+                <tr>
+                    <td class="itemLabel">Number of Assets: </td>
+                    <td class="itemValue">@Model.NumberOfAssets</td>
+                </tr>
+                <tr>
+                    <td class="itemLabel">Value of Assets: </td>
+                    <td class="itemValue">$@Model.TotalAssetValue</td>
+                </tr>
+            </table>
         </div>
     </div>
+</div>
 

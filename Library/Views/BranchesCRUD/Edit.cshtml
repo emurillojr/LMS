@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 }
 
-
 <div class="container">
     <div class="header clearfix detailHeading">
         <h2 class="text-muted">Edit Branch Information</h2>
@@ -19,57 +18,41 @@
     <form asp-action="Edit">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <input type="hidden" asp-for="Id" />
-    
-            <div class="col-sm-5">
-                <div class="form-group">
-                    <label asp-for="Name" class="control-label">Branch Name</label>
-
-                    <input asp-for="Name" class="form-control" />
-                    <span asp-validation-for="Name" class="text-danger"></span>
-                </div>
-
-
-                <div class="form-group">
-                    <label asp-for="Address" class="control-label"></label>
-
-                    <input asp-for="Address" class="form-control" />
-                    <span asp-validation-for="Address" class="text-danger"></span>
-
-                </div>
-                <div class="form-group">
-                    <label asp-for="Telephone" class="control-label">Phone Number</label>
-
-                    <input asp-for="Telephone" class="form-control" />
-                    <span asp-validation-for="Telephone" class="text-danger"></span>
-
-                </div>
-                <div class="form-group">
-
-                    <label asp-for="Description" class="control-label"></label>
-
-                    <input asp-for="Description" class="form-control" />
-                    <span asp-validation-for="Description" class="text-danger"></span>
-
-                </div>
-                <div class="form-group">
-                    <label asp-for="OpenDate" class="control-label">Date Opened</label>
-
-                    <input asp-for="OpenDate" class="form-control" type="date" />
-                    <span asp-validation-for="OpenDate" class="text-danger"></span>
-
-                </div>
-                <div class="form-group">
-                    <label asp-for="ImageUrl" class="control-label">Image</label>
-
-                    <input asp-for="ImageUrl" class="form-control" />
-                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
-
-                </div>
-               
-                    <input type="submit" value="Save" class="btn btn-lg btn-success" />
-               
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">Branch Name</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telephone" class="control-label">Phone Number</label>
+                <input asp-for="Telephone" class="form-control" />
+                <span asp-validation-for="Telephone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OpenDate" class="control-label">Date Opened</label>
+                <input asp-for="OpenDate" class="form-control" type="date" />
+                <span asp-validation-for="OpenDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl" class="control-label">Image</label>
+                <input asp-for="ImageUrl" class="form-control" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-lg btn-success" />
+            </div>
+        </div>
     </form>
 </div>
 

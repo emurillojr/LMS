@@ -29,7 +29,8 @@ namespace Library.Controllers
 
         public Branch GetCurrentLocation(int id)
         {
-            return _context.LibraryAssets.FirstOrDefault(asset => asset.Id == id).Location;
+            return _context.LibraryAssets
+                .FirstOrDefault(asset => asset.Id == id).Location;
         }
 
         public string GetDeweyIndex(int id) // return dewey index of asset type book
@@ -55,33 +56,13 @@ namespace Library.Controllers
         public string GetTitle(int id)
         {
             return _context.LibraryAssets
-                    .FirstOrDefault(a => a.Id == id).Title;
+                .FirstOrDefault(a => a.Id == id).Title;
         }
-
-        //public string GetType(int id)
-        //{
-        //    var book = _context.LibraryAssets.OfType<Book>()
-        //        .Where(b => b.Id == id);
-        //    return book.Any() ? "Book" : "Video";
-        //}
 
         public string GetAuthorOrDirector(int id)
         {
-
             return _context.LibraryAssets
-                        .FirstOrDefault(a => a.Id == id).Author;
-
-
-            //var isBook = _context.LibraryAssets.OfType<Asset>()
-            //    .Where(asset => asset.Id == id).Any();
-
-            //var isVideo = _context.LibraryAssets.OfType<Asset>()
-            //    .Where(asset => asset.Id == id).Any();
-
-            //return isBook ?
-            //    _context.LibraryAssets.FirstOrDefault(book => book.Id == id).Author
-            //_context.LibraryAssets.FirstOrDefault(video => video.Id == id).Director
-            //?? "Unknown";
+                .FirstOrDefault(a => a.Id == id).Author;
         }
     }
 }

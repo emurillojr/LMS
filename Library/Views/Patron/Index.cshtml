@@ -11,53 +11,49 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 }
 
-    <div id="assets">
-        <h2 class="text-muted">Patron Index List</h2>
-        <br />
-
-        <div class="row1">
-            <a asp-controller="Home" asp-action="Index"><i class="fas fa-home fa-3x" style="color:black; margin-right: 30px"></i></a>
-            <a asp-controller="PatronsCRUD" asp-action="Create"><i class="fas fa-plus fa-3x" style="color:forestgreen; margin-right: 30px"></i></a>
-
-            <form asp-action="Index" method="get">
-                <div class="form-actions no-color">
-                    
-                        <div class="searchThis">
-                            <input type="text" name="SearchString" placeholder="Search By Last Name" value="@ViewData["currentFilter"]" id="searchPlease" />
-                            <button type="submit" class="btn btn-dark">
-                                <i class="fa fa-search fa-2x"></i>
-                            </button>
-                        </div>
-                    
+<div id="assets">
+    <h2 class="text-muted">Patron Index List</h2>
+    <br />
+    <div class="row1">
+        <a asp-controller="Home" asp-action="Index"><i class="fas fa-home fa-3x" style="color:black; margin-right: 30px"></i></a>
+        <a asp-controller="PatronsCRUD" asp-action="Create"><i class="fas fa-plus fa-3x" style="color:forestgreen; margin-right: 30px"></i></a>
+        <form asp-action="Index" method="get">
+            <div class="form-actions no-color">
+                <div class="searchThis">
+                    <input type="text" name="SearchString" placeholder="Search By Last Name" value="@ViewData["currentFilter"]" id="searchPlease" />
+                    <button type="submit" class="btn btn-dark">
+                        <i class="fa fa-search fa-2x"></i>
+                    </button>
                 </div>
-            </form>
             </div>
-        <br />
-            <div id="assetsTable">
-                <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp customTable" id="catalogIndexTable">
-                    <thead>
-                        <tr>
-                            <th>Profile</th>
-                            <th>Last Name</th>
-                            <th>First Name</th>
-                            <th>Home Library Branch</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var patron in Model.Patrons)
+        </form>
+    </div>
+    <br />
+    <div id="assetsTable">
+        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp customTable" id="catalogIndexTable">
+            <thead>
+                <tr>
+                    <th>Profile</th>
+                    <th>Last Name</th>
+                    <th>First Name</th>
+                    <th>Home Library Branch</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var patron in Model.Patrons)
                 {
-                        <tr class="assetRow">
-                            <td>
-                                <a asp-controller="Patron" asp-action="Detail" asp-route-id="@patron.Id"><i class="fas fa-user-circle fa-2x" style="color:lightslategray"></i></a>
-                            </td>
-                            <td>@patron.LastName</td>
-                            <td>@patron.FirstName</td>
-                            <td>@patron.HomeLibraryBranch</td>
-                        </tr>
-        }
-                    </tbody>
-                </table>
-            </div>
-            <br />
-            <a asp-action="Index">Back to Patron Index List</a>
-        </div>
+                    <tr class="assetRow">
+                        <td>
+                            <a asp-controller="Patron" asp-action="Detail" asp-route-id="@patron.Id"><i class="fas fa-user-circle fa-2x" style="color:lightslategray"></i></a>
+                        </td>
+                        <td>@patron.LastName</td>
+                        <td>@patron.FirstName</td>
+                        <td>@patron.HomeLibraryBranch</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <br />
+    <a asp-action="Index">Back to Patron Index List</a>
+</div>

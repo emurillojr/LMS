@@ -11,38 +11,36 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 }
 
-    <div id="assets">
-        <h2 class="text-muted">Branch Index List</h2>
-        <br />
-        <div class="row1">
-            <a asp-controller="Home" asp-action="Index"><i class="fas fa-home fa-3x" style="color:black; margin-right: 30px"></i></a>
-            <a asp-controller="BranchesCRUD" asp-action="Create"><i class="fas fa-plus fa-3x" style="color:forestgreen; margin-right: 30px"></i></a>
-            <form asp-action="Index" method="get">
-                <div class="form-actions no-color">
-
-                    <div class="searchThis">
-                        <input type="text" name="SearchString" placeholder="Search By Branch Name" value="@ViewData["currentFilter"]" id="searchPlease" />
-                        <button type="submit" class="btn btn-dark">
-                            <i class="fa fa-search fa-2x"></i>
-                        </button>
-                    </div>
-
+<div id="assets">
+    <h2 class="text-muted">Branch Index List</h2>
+    <br />
+    <div class="row1">
+        <a asp-controller="Home" asp-action="Index"><i class="fas fa-home fa-3x" style="color:black; margin-right: 30px"></i></a>
+        <a asp-controller="BranchesCRUD" asp-action="Create"><i class="fas fa-plus fa-3x" style="color:forestgreen; margin-right: 30px"></i></a>
+        <form asp-action="Index" method="get">
+            <div class="form-actions no-color">
+                <div class="searchThis">
+                    <input type="text" name="SearchString" placeholder="Search By Branch Name" value="@ViewData["currentFilter"]" id="searchPlease" />
+                    <button type="submit" class="btn btn-dark">
+                        <i class="fa fa-search fa-2x"></i>
+                    </button>
                 </div>
-            </form>
-        </div>
-        <br>
-        <div id="assetsTable">
-            <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp customTable" id="catalogIndexTable">
-                <thead>
-                    <tr>
-                        <th>Profile</th>
-                        <th>Branch Name</th>
-                        <th>Number Of Assets</th>
-                        <th>Number of Patrons</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var branch in Model.Branches)
+            </div>
+        </form>
+    </div>
+    <br>
+    <div id="assetsTable">
+        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp customTable" id="catalogIndexTable">
+            <thead>
+                <tr>
+                    <th>Profile</th>
+                    <th>Branch Name</th>
+                    <th>Number Of Assets</th>
+                    <th>Number of Patrons</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var branch in Model.Branches)
                 {
                     <tr class="assetRow">
                         <td>
@@ -52,10 +50,10 @@
                         <td>@branch.NumberOfAssets</td>
                         <td>@branch.NumberOfPatrons</td>
                     </tr>
-            }
-                </tbody>
-            </table>
-        </div>
+                }
+            </tbody>
+        </table>
     </div>
-        <br />
-        <a asp-action="Index">Back to Branch Index List</a>
+</div>
+<br />
+<a asp-action="Index">Back to Branch Index List</a>

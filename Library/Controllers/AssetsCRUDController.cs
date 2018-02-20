@@ -54,9 +54,6 @@ namespace Library.Controllers
         {
             if (ModelState.IsValid)
             {
-
-                //string Location = "1";
-           
                 _context.Add(libraryAsset);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index", "Asset");

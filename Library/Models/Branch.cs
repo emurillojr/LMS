@@ -7,14 +7,11 @@ namespace Library.Models
     public class Branch
     {
         public int Id { get; set; }
-
         [Required]
         [StringLength(30)] // example of how to pass attributes
         public string Name { get; set; }
-
         [Required]
         public string Address { get; set; }
-
         [Required]
         public string Telephone { get; set; }
         public string Description { get; set; }

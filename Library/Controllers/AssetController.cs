@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
 
-
 namespace Library.Controllers
 {
     public class AssetController : Controller // inherit from Controller base class
@@ -32,10 +31,8 @@ namespace Library.Controllers
                     Id = a.Id,
                     ImageUrl = a.ImageUrl,
                     AuthorOrDirector = _assets.GetAuthorOrDirector(a.Id),
-                    //DeweyCallNumber = _assets.GetDeweyIndex(a.Id),
                     Title = a.Title,
                     ISBN = _assets.GetIsbn(a.Id)
-                    //CurrentLocation = _assets.GetCurrentLocation(a.Id).Name
                 });
 
             var model = new AssetIndexModel()
@@ -65,20 +62,5 @@ namespace Library.Controllers
 
             return View(model);
         }
-
-        //public ActionResult ListofAssets(string searchString)
-        //{
-        //    // https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/sort-filter-page
-        //    //var catalog = _assets.GetAll().ToList();  // list of entire catalog of library assets
-
-        //    var assetList = from c in _assets.GetAll().ToList() select c;
-        //    ViewData["CurrentFilter"] = searchString;
-        //    if (!String.IsNullOrEmpty(searchString))
-        //    {
-        //        assetList = assetList.Where(c => c.Title.ToUpper().Contains(searchString.ToUpper()));
-        //    }
-
-        //    return View(assetList);
-        //}
     }
 }

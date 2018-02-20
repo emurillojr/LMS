@@ -14,6 +14,7 @@ namespace Library.Controllers
         {
             _context = context;
         }
+
         public IEnumerable<Patron> GetAll()
         {
             return _context.Patrons // returns collection of all patrons in database
@@ -28,7 +29,7 @@ namespace Library.Controllers
 
         IEnumerable<Patron> IPatron.GetAll()
         {
-            return  _context.Patrons // returns collection of all patrons in database
+            return _context.Patrons // returns collection of all patrons in database
                 .Include(patron => patron.HomeLibraryBranch); // include in query Home Library Branch entity 
         }
     }
