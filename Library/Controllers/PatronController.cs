@@ -33,7 +33,8 @@ namespace Library.Controllers
                     Id = p.Id,
                     FirstName = p.FirstName,
                     LastName = p.LastName,
-
+                    Address = p.Address,
+                    Telephone = p.TelephoneNumber,
                     HomeLibraryBranch = p.HomeLibraryBranch.Name
                 }).ToList();
 
@@ -51,6 +52,7 @@ namespace Library.Controllers
 
             var model = new PatronDetailModel
             {
+                Id = id,
                 LastName = patron.LastName,
                 FirstName = patron.FirstName,
                 Address = patron.Address,

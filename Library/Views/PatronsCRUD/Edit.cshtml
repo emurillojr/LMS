@@ -1,27 +1,31 @@
 ﻿@model Library.Models.Patron
 
-@{
-    ViewData["Title"] = "Edit";
+@section Scripts{
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 }
 
+@section Styles{
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+}
 
-
-<h2>Edit</h2>
-
-<h4>Patron</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
+<div class="container">
+    <div class="header clearfix detailHeading">
+        <h2 class="text-muted">Edit Asset Information</h2>
+        <a asp-controller="Patron" asp-action="Detail" asp-route-id="@Model.Id"><i class="fas fa-arrow-circle-left fa-3x" style="color:black"></i></a>
+    </div>
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Id" />
+        <div class="col-sm-5">
             <div class="form-group">
-                <label asp-for="FirstName" class="control-label"></label>
+                <label asp-for="FirstName" class="control-label">First Name</label>
                 <input asp-for="FirstName" class="form-control" />
                 <span asp-validation-for="FirstName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="LastName" class="control-label"></label>
+                <label asp-for="LastName" class="control-label">Last Name</label>
                 <input asp-for="LastName" class="form-control" />
                 <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
@@ -31,23 +35,24 @@
                 <span asp-validation-for="Address" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DateOfBirth" class="control-label"></label>
-                <input asp-for="DateOfBirth" class="form-control" />
+                <label asp-for="DateOfBirth" class="control-label">Date of Birth</label>
+                <input asp-for="DateOfBirth" class="form-control" type="date"/>
                 <span asp-validation-for="DateOfBirth" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TelephoneNumber" class="control-label"></label>
+                <label asp-for="TelephoneNumber" class="control-label">Phone Number</label>
                 <input asp-for="TelephoneNumber" class="form-control" />
                 <span asp-validation-for="TelephoneNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <label asp-for="HomeLibraryBranchId" class="control-label">Home Library Branch Code</label>
+                <input asp-for="HomeLibraryBranchId" class="form-control" min="1" max="3" />
+                <span asp-validation-for="HomeLibraryBranchId" class="text-danger"></span>
             </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-lg btn-success" />
+            </div>
+        </div>
+    </form>
 </div>
 

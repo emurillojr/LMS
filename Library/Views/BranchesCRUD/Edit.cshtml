@@ -1,56 +1,75 @@
 ﻿@model Library.Models.Branch
 
-@{
-    ViewData["Title"] = "Edit";
+@section Scripts{
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 }
 
-<h2>Edit</h2>
+@section Styles{
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+}
 
-<h4>LibraryBranch</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Address" class="control-label"></label>
-                <input asp-for="Address" class="form-control" />
-                <span asp-validation-for="Address" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Telephone" class="control-label"></label>
-                <input asp-for="Telephone" class="form-control" />
-                <span asp-validation-for="Telephone" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="OpenDate" class="control-label"></label>
-                <input asp-for="OpenDate" class="form-control" />
-                <span asp-validation-for="OpenDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ImageUrl" class="control-label"></label>
-                <input asp-for="ImageUrl" class="form-control" />
-                <span asp-validation-for="ImageUrl" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </form>
+
+<div class="container">
+    <div class="header clearfix detailHeading">
+        <h2 class="text-muted">Edit Branch Information</h2>
+        <a asp-controller="Branch" asp-action="Detail" asp-route-id="@Model.Id"><i class="fas fa-arrow-circle-left fa-3x" style="color:black"></i></a>
     </div>
-</div>
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Id" />
+    
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label">Branch Name</label>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label asp-for="Address" class="control-label"></label>
+
+                    <input asp-for="Address" class="form-control" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="Telephone" class="control-label">Phone Number</label>
+
+                    <input asp-for="Telephone" class="form-control" />
+                    <span asp-validation-for="Telephone" class="text-danger"></span>
+
+                </div>
+                <div class="form-group">
+
+                    <label asp-for="Description" class="control-label"></label>
+
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="OpenDate" class="control-label">Date Opened</label>
+
+                    <input asp-for="OpenDate" class="form-control" type="date" />
+                    <span asp-validation-for="OpenDate" class="text-danger"></span>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="ImageUrl" class="control-label">Image</label>
+
+                    <input asp-for="ImageUrl" class="form-control" />
+                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+
+                </div>
+               
+                    <input type="submit" value="Save" class="btn btn-lg btn-success" />
+               
+            </div>
+
+    </form>
 </div>
 

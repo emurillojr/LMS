@@ -17,71 +17,54 @@
     </div>
     <form asp-action="Create">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div class="form-group">
-            <label asp-for="Title" class="control-label">Title</label>
-            <div class="col-sm-5">
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label asp-for="Title" class="control-label">Title</label>
                 <input asp-for="Title" class="form-control" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="Year" class="control-label">Year</label>
-            <div class="col-sm-5">
+            <div class="form-group">
+                <label asp-for="Year" class="control-label">Year</label>
                 <input asp-for="Year" class="form-control" />
                 <span asp-validation-for="Year" class="text-danger"></span>
             </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="Cost" class="control-label">Cost</label>
-            <div class="col-sm-5">
+            <div class="form-group">
+                <label asp-for="Cost" class="control-label">Cost</label>
                 <input asp-for="Cost" class="form-control" />
                 <span asp-validation-for="Cost" class="text-danger"></span>
             </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="ImageUrl" class="control-label">Image</label>
-            <div class="col-sm-5">
+            <div class="form-group">
+                <label asp-for="ImageUrl" class="control-label">Image</label>
                 <input asp-for="ImageUrl" class="form-control" readonly value="/images/default.png" />
                 <span asp-validation-for="ImageUrl" class="text-danger"></span>
             </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="NumberOfCopies" class="control-label"># of Copies</label>
-            <div class="col-sm-5">
+            <div class="form-group">
+                <label asp-for="NumberOfCopies" class="control-label"># of Copies</label>
                 <input asp-for="NumberOfCopies" class="form-control" />
                 <span asp-validation-for="NumberOfCopies" class="text-danger"></span>
             </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="ISBN" class="control-label">ISBN 13 Digit #</label>
-            <div class="col-sm-5">
-                <input asp-for="ISBN" class="form-control" placeholder="1234567890123" />
+            <div class="form-group">
+                <label asp-for="ISBN" class="control-label">ISBN 13 Digit #</label>
+                <input asp-for="ISBN" class="form-control" placeholder="1234567890123" maxlength="13" />
                 <span asp-validation-for="ISBN" class="text-danger"></span>
             </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="Author" class="control-label">Author</label>
-            <div class="col-sm-5">
+            <div class="form-group">
+                <label asp-for="Author" class="control-label">Author</label>
                 <input asp-for="Author" class="form-control" />
                 <span asp-validation-for="Author" class="text-danger"></span>
             </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="DeweyIndex" class="control-label">Dewey Index 6 Digit #</label>
-            <div class="col-sm-5">
-                <input asp-for="DeweyIndex" class="form-control" placeholder="123.456" />
+            <div class="form-group">
+                <label asp-for="DeweyIndex" class="control-label">Dewey Index 6 Digit #</label>
+                <input asp-for="DeweyIndex" class="form-control" placeholder="123.456" maxlength="7" />
                 <span asp-validation-for="DeweyIndex" class="text-danger"></span>
             </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="LocationId" class="control-label">Location Code</label>
-            <div class="col-sm-5">
+            <div class="form-group">
+                <label asp-for="LocationId" class="control-label">Location Code</label>
                 <input asp-for="LocationId" class="form-control" min="1" max="3" placeholder="1 for Providence, 2 for Fox Point, 3 for Washington Park" />
                 <span asp-validation-for="LocationId" class="text-danger"></span>
             </div>
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Create" class="btn btn-lg btn-success" />
-        </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-lg btn-success" />
+            </div>
     </form>
 </div>

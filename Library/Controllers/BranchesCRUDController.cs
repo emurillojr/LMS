@@ -56,7 +56,7 @@ namespace Library.Controllers
             {
                 _context.Add(libraryBranch);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Branch");
             }
             return View(libraryBranch);
         }
@@ -107,7 +107,7 @@ namespace Library.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Branch");
             }
             return View(libraryBranch);
         }
@@ -138,7 +138,7 @@ namespace Library.Controllers
             var libraryBranch = await _context.LibraryBranches.SingleOrDefaultAsync(m => m.Id == id);
             _context.LibraryBranches.Remove(libraryBranch);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index", "Branch");
         }
 
         private bool LibraryBranchExists(int id)

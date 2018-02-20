@@ -50,13 +50,13 @@ namespace Library.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,Address,DateOfBirth,TelephoneNumber")] Patron patron)
+        public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,Address,DateOfBirth,TelephoneNumber,HomeLibraryBranchId")] Patron patron)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(patron);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Patron");
             }
             return View(patron);
         }
@@ -82,7 +82,7 @@ namespace Library.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,FirstName,LastName,Address,DateOfBirth,TelephoneNumber")] Patron patron)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,FirstName,LastName,Address,DateOfBirth,TelephoneNumber,HomeLibraryBranchId")] Patron patron)
         {
             if (id != patron.Id)
             {
@@ -107,7 +107,7 @@ namespace Library.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Patron");
             }
             return View(patron);
         }
@@ -138,7 +138,7 @@ namespace Library.Controllers
             var patron = await _context.Patrons.SingleOrDefaultAsync(m => m.Id == id);
             _context.Patrons.Remove(patron);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index", "Patron");
         }
 
         private bool PatronExists(int id)

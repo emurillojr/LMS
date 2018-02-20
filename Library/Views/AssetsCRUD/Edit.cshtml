@@ -1,9 +1,5 @@
 ﻿@model Library.Models.Asset
 
-@{
-    ViewData["Title"] = "Edit";
-}
-
 @section Scripts{
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
@@ -14,7 +10,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 }
 
-
 <div class="container">
     <div class="header clearfix detailHeading">
         <h2 class="text-muted">Edit Asset Information</h2>
@@ -23,72 +18,55 @@
     <form asp-action="Edit">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <input type="hidden" asp-for="Id" />
-
-        <div class="form-group">
-            <label asp-for="Title" class="control-label">Title</label>
-            <div class="col-sm-5">
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label asp-for="Title" class="control-label">Title</label>
                 <input asp-for="Title" class="form-control" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="Year" class="control-label">Year</label>
-            <div class="col-sm-5">
+            <div class="form-group">
+                <label asp-for="Year" class="control-label">Year</label>
                 <input asp-for="Year" class="form-control" />
                 <span asp-validation-for="Year" class="text-danger"></span>
             </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="Cost" class="control-label">Cost</label>
-            <div class="col-sm-5">
+            <div class="form-group">
+                <label asp-for="Cost" class="control-label">Cost</label>
                 <input asp-for="Cost" class="form-control" />
                 <span asp-validation-for="Cost" class="text-danger"></span>
             </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="ImageUrl" class="control-label">Image Url</label>
-            <div class="col-sm-5">
+            <div class="form-group">
+                <label asp-for="ImageUrl" class="control-label">Image Url</label>
                 <input asp-for="ImageUrl" class="form-control" />
                 <span asp-validation-for="ImageUrl" class="text-danger"></span>
             </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="NumberOfCopies" class="control-label"># of Copies</label>
-            <div class="col-sm-5">
+            <div class="form-group">
+                <label asp-for="NumberOfCopies" class="control-label"># of Copies</label>
                 <input asp-for="NumberOfCopies" class="form-control" />
                 <span asp-validation-for="NumberOfCopies" class="text-danger"></span>
             </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="ISBN" class="control-label">ISBN</label>
-            <div class="col-sm-5">
+            <div class="form-group">
+                <label asp-for="ISBN" class="control-label">ISBN</label>
                 <input asp-for="ISBN" class="form-control" />
                 <span asp-validation-for="ISBN" class="text-danger"></span>
             </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="Author" class="control-label">Author</label>
-            <div class="col-sm-5">
+            <div class="form-group">
+                <label asp-for="Author" class="control-label">Author</label>
                 <input asp-for="Author" class="form-control" />
                 <span asp-validation-for="Author" class="text-danger"></span>
             </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="DeweyIndex" class="control-label">Dewey Index</label>
-            <div class="col-sm-5">
+            <div class="form-group">
+                <label asp-for="DeweyIndex" class="control-label">Dewey Index</label>
                 <input asp-for="DeweyIndex" class="form-control" />
                 <span asp-validation-for="DeweyIndex" class="text-danger"></span>
             </div>
-        </div>
-        <div class="form-group">
+            <div class="form-group">
                 <label asp-for="LocationId" class="control-label">Location Code</label>
-                <div class="col-sm-5">
-                    <input asp-for="LocationId" class="form-control" min="1" max="3"/>
-                    <span asp-validation-for="LocationId" class="text-danger"></span>
-                </div>
+                <input asp-for="LocationId" class="form-control" min="1" max="3" />
+                <span asp-validation-for="LocationId" class="text-danger"></span>
             </div>
-        <div class="form-group">
-            <input type="submit" value="Save" class="btn btn-lg btn-success" />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-lg btn-success" />
+            </div>
         </div>
     </form>
 </div>

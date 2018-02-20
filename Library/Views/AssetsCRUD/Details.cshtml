@@ -1,4 +1,4 @@
-﻿@model Library.Models.Asset
+﻿@*@model Library.Models.Asset
 
 @{
     ViewData["Title"] = "Details";
@@ -45,12 +45,12 @@
                 <tr>
                     <td class="itemLabel">Call Number: </td>
                     <td class="itemValue">@Model.DeweyIndex</td>
-                </tr>
+                </tr>*@
                 @*<tr>
                         <td class="itemLabel">Location: </td>
                         <td class="itemValue">@Model.Location.Name</td>
                     </tr>*@
-                <tr>
+                @*<tr>
                     <td class="itemLabel"># of Copies: </td>
                     <td class="itemValue">@Model.NumberOfCopies</td>
                 </tr>
@@ -60,7 +60,7 @@
 </div>
 
 
-@*<div>
+<div>
         <h4>Asset</h4>
         <hr />
         <dl class="dl-horizontal">
@@ -95,10 +95,10 @@
                 @Html.DisplayFor(model => model.NumberOfCopies)
             </dd>
         </dl>
-    </div>*@
+    </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Id"><i class="fas fa-edit fa-2x" style="color:darkorange"></i></a>
-    <a asp-action="Delete" asp-route-id="@Model.Id"><i class="fas fa-trash-alt fa-2x" style="color:darkred"></i></a> |
+    <a asp-action="Delete" asp-route-id="@Model.Id"><i class="fas fa-trash-alt fa-2x" style="color:darkred"></i></a> |*@
     @*<a asp-action="Index"> Back to Index CRUD List</a>*@
-    <a asp-controller="Asset" asp-action="Index">Back to Asset Index List</a>
-</div>
+    @*<a asp-controller="Asset" asp-action="Index">Back to Asset Index List</a>
+</div>*@
