@@ -34,9 +34,9 @@
             <thead>
                 <tr>
                     <th>Profile</th>
-                    <th>Branch Name</th>
-                    <th>Address</th>
-                    <th>Phone Number</th>
+                    <th><a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">Branch Name</a></th>
+                    <th><a asp-action="Index" asp-route-sortOrder="@ViewData["AddressSortParm"]">Address</a></th>
+                    <th><a asp-action="Index" asp-route-sortOrder="@ViewData["TelephoneSortParm"]">Phone Number</a></th>
                 </tr>
             </thead>
             <tbody>

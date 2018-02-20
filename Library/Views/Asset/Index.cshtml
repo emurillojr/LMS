@@ -34,9 +34,9 @@
             <thead>
                 <tr>
                     <th>Profile</th>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>ISBN</th>
+                    <th><a asp-action="Index" asp-route-sortOrder="@ViewData["TitleSortParm"]">Title</a></th>
+                    <th><a asp-action="Index" asp-route-sortOrder="@ViewData["AuthorSortParm"]">Author</a></th>
+                    <th><a asp-action="Index" asp-route-sortOrder="@ViewData["ISBNSortParm"]">ISBN</a></th>
                 </tr>
             </thead>
             <tbody>

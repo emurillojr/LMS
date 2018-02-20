@@ -17,16 +17,44 @@ namespace Library.Controllers
             _branch = branch;
         }
 
-        public IActionResult Index(string searchString)
+        public IActionResult Index(string sortOrder, string searchString)
         {
             var branchModels = from c in _branch.GetAll().ToList() select c;
             ViewData["CurrentFilter"] = searchString;
+            ViewData["NameSortParm"] = sortOrder == "name" ? "name_desc" : "name";
+            ViewData["AddressSortParm"] = sortOrder == "address" ? "address_desc" : "address";
+            ViewData["TelephoneSortParm"] = sortOrder == "telephone" ? "telephone_desc" : "telephone"; ;
 
             if (!String.IsNullOrEmpty(searchString))
             {
                 branchModels = branchModels.Where(c => c.Name.ToUpper().Contains(searchString.ToUpper())
                                                 || c.Address.ToUpper().Contains(searchString.ToUpper())
                                                 || c.Telephone.Contains(searchString));
+            }
+
+            switch (sortOrder)
+            {
+                case "name":
+                    branchModels = branchModels.OrderBy(s => s.Name.ToUpper());
+                    break;
+                case "name_desc":
+                    branchModels = branchModels.OrderByDescending(s => s.Name.ToUpper());
+                    break;
+                case "address":
+                    branchModels = branchModels.OrderBy(s => s.Address.ToUpper());
+                    break;
+                case "address_desc":
+                    branchModels = branchModels.OrderByDescending(s => s.Address.ToUpper());
+                    break;
+                case "telephone":
+                    branchModels = branchModels.OrderBy(s => s.Telephone);
+                    break;
+                case "telephone_desc":
+                    branchModels = branchModels.OrderByDescending(s => s.Telephone);
+                    break;
+                default:
+                    branchModels = branchModels.OrderBy(s => s.Id);
+                    break;
             }
 
             var branches = branchModels

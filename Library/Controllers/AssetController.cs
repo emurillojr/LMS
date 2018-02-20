@@ -14,11 +14,14 @@ namespace Library.Controllers
             _assets = assets;
         }
 
-        public IActionResult Index(string searchString)
+        public IActionResult Index(string sortOrder, string searchString)
         {
             //var assetModels = _assets.GetAll();  // list of entire catalog of library assets
             var assetModels = from c in _assets.GetAll().ToList() select c;
             ViewData["CurrentFilter"] = searchString;
+            ViewData["TitleSortParm"] = sortOrder == "title" ? "title_desc" : "title";
+            ViewData["AuthorSortParm"] = sortOrder == "author" ? "author_desc" : "author";
+            ViewData["ISBNSortParm"] = sortOrder == "isbn" ? "isbn_desc" : "isbn"; ;
 
             if (!String.IsNullOrEmpty(searchString))
             {
@@ -26,6 +29,32 @@ namespace Library.Controllers
                                             || c.Author.ToUpper().Contains(searchString.ToUpper())
                                             || c.ISBN.ToUpper().Contains(searchString.ToUpper()));
             }
+
+            switch (sortOrder)
+            {
+                case "title":
+                    assetModels = assetModels.OrderBy(s => s.Title.ToUpper());
+                    break;
+                case "title_desc":
+                    assetModels = assetModels.OrderByDescending(s => s.Title.ToUpper());
+                    break;
+                case "author":
+                    assetModels = assetModels.OrderBy(s => s.Author.ToUpper());
+                    break;
+                case "author_desc":
+                    assetModels = assetModels.OrderByDescending(s => s.Author.ToUpper());
+                    break;
+                case "isbn":
+                    assetModels = assetModels.OrderBy(s => s.ISBN);
+                    break;
+                case "isbn_desc":
+                    assetModels = assetModels.OrderByDescending(s => s.ISBN);
+                    break;
+                default:
+                    assetModels = assetModels.OrderBy(s => s.Id);
+                    break;
+            }
+            
 
             var listingResult = assetModels
                 .Select(a => new AssetIndexListingModel

@@ -15,11 +15,14 @@ namespace Library.Controllers
             _patron = patron;
         }
 
-        public IActionResult Index(string searchString)
+        public IActionResult Index(string sortOrder, string searchString)
         {
             //var allPatrons = _patron.GetAll(); // stores all patrons
             var allPatrons = from c in _patron.GetAll().ToList() select c;
             ViewData["CurrentFilter"] = searchString;
+            ViewData["LastNameSortParm"] = sortOrder == "lastname" ? "lastname_desc" : "lastname";
+            ViewData["FirstNameSortParm"] = sortOrder == "firstname" ? "firstname_desc" : "firstname";
+            ViewData["HomeLibraryBranchSortParm"] = sortOrder == "homelibbranch" ? "homelibbranch_desc" : "homelibbranch";
 
             if (!String.IsNullOrEmpty(searchString))
             {
@@ -27,6 +30,31 @@ namespace Library.Controllers
                                             || c.FirstName.ToUpper().Contains(searchString.ToUpper())
                                             || c.FullName.ToUpper().Contains(searchString.ToUpper())
                                             || c.HomeLibraryBranch.Name.ToUpper().Contains(searchString.ToUpper()));
+            }
+
+            switch (sortOrder)
+            {
+                case "lastname":
+                    allPatrons = allPatrons.OrderBy(s => s.LastName.ToUpper());
+                    break;
+                case "lastname_desc":
+                    allPatrons = allPatrons.OrderByDescending(s => s.LastName.ToUpper());
+                    break;
+                case "firstname":
+                    allPatrons = allPatrons.OrderBy(s => s.FirstName.ToUpper());
+                    break;
+                case "firstname_desc":
+                    allPatrons = allPatrons.OrderByDescending(s => s.FirstName.ToUpper());
+                    break;
+                case "homelibbranch":
+                    allPatrons = allPatrons.OrderBy(s => s.HomeLibraryBranch.Name.ToUpper());
+                    break;
+                case "homelibbranch_desc":
+                    allPatrons = allPatrons.OrderByDescending(s => s.HomeLibraryBranch.Name.ToUpper());
+                    break;
+                default:
+                    allPatrons = allPatrons.OrderBy(s => s.Id);
+                    break;
             }
 
             var patronModels = allPatrons
