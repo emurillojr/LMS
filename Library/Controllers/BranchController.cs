@@ -89,7 +89,7 @@ namespace Library.Controllers
                 NumberOfAssets = _branch.GetAssets(id).Count(),
                 NumberOfPatrons = _branch.GetPatrons(id).Count(),
                 TotalAssetValue = _branch.GetAssets(id).Sum(a => a.Cost),
-                ImageUrl = branch.ImageUrl,
+                ImageUrl = "/images/"+branch.ImageUrl,
             };
 
             return View(model);

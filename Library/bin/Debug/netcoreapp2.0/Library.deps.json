@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "e531c305d00baddce899010831a73f4f436ee99a"
+    "signature": "4be0a50fabfdfbe6c4adfa26ce9cc87e09205de2"
   },
   "compilationOptions": {
     "defines": [
@@ -27,7 +27,8 @@
           "Microsoft.EntityFrameworkCore": "2.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.0.1",
           "Microsoft.NETCore.App": "2.0.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.2"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.2",
+          "SixLabors.ImageSharp": "1.0.0-beta0002"
         },
         "runtime": {
           "Library.dll": {}
@@ -2687,6 +2688,28 @@
           }
         }
       },
+      "SixLabors.Core/1.0.0-beta0004": {
+        "runtime": {
+          "lib/netcoreapp2.0/SixLabors.Core.dll": {}
+        },
+        "compile": {
+          "lib/netcoreapp2.0/SixLabors.Core.dll": {}
+        }
+      },
+      "SixLabors.ImageSharp/1.0.0-beta0002": {
+        "dependencies": {
+          "SixLabors.Core": "1.0.0-beta0004",
+          "System.Buffers": "4.4.0",
+          "System.Memory": "4.4.0-preview2-25405-01",
+          "System.Runtime.CompilerServices.Unsafe": "4.4.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/SixLabors.ImageSharp.dll": {}
+        },
+        "compile": {
+          "lib/netstandard2.0/SixLabors.ImageSharp.dll": {}
+        }
+      },
       "SQLitePCLRaw.bundle_green/1.1.7": {
         "dependencies": {
           "SQLitePCLRaw.core": "1.1.7",
@@ -3256,6 +3279,28 @@
           "System.Reflection.Extensions": "4.3.0",
           "System.Resources.ResourceManager": "4.3.0",
           "System.Runtime": "4.3.0"
+        }
+      },
+      "System.Memory/4.4.0-preview2-25405-01": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.0.0",
+          "System.Runtime.CompilerServices.Unsafe": "4.4.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Memory.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netcoreapp2.0/System.Memory.dll": {
+            "rid": "unix",
+            "assetType": "runtime"
+          },
+          "runtimes/win/lib/netcoreapp2.0/System.Memory.dll": {
+            "rid": "win",
+            "assetType": "runtime"
+          }
+        },
+        "compile": {
+          "ref/netstandard2.0/System.Memory.dll": {}
         }
       },
       "System.Net.Http/4.3.0": {
@@ -5618,6 +5663,20 @@
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
     },
+    "SixLabors.Core/1.0.0-beta0004": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cvARRKizglXytmRuVfDA/qCsHzahFApCkzdwtHi07Im0xKL36tPf16gWnPWyEGQJXBd3NzkmXFKPSv1gRSd4zQ==",
+      "path": "sixlabors.core/1.0.0-beta0004",
+      "hashPath": "sixlabors.core.1.0.0-beta0004.nupkg.sha512"
+    },
+    "SixLabors.ImageSharp/1.0.0-beta0002": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sTOUx0gIDkIcedB/bcWNJIaeVEHV5UTEYxW0haMjV8fNO+ah2OyaH4Uxoago0OLYpM3RlSRCXZn5D8beyo2Sxw==",
+      "path": "sixlabors.imagesharp/1.0.0-beta0002",
+      "hashPath": "sixlabors.imagesharp.1.0.0-beta0002.nupkg.sha512"
+    },
     "SQLitePCLRaw.bundle_green/1.1.7": {
       "type": "package",
       "serviceable": true,
@@ -5946,6 +6005,13 @@
       "sha512": "sha512-Yn/WfYe9RoRfmSLvUt2JerP0BTGGykCZkQPgojaxgzF2N0oPo+/AhB8TXOpdCcNlrG3VRtsamtK2uzsp3cqRVw==",
       "path": "system.linq.queryable/4.0.1",
       "hashPath": "system.linq.queryable.4.0.1.nupkg.sha512"
+    },
+    "System.Memory/4.4.0-preview2-25405-01": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9YCuIA7uv/aEGbwUGQ4QhlrxFgPW/CPwz32xoxSwnv2SIDqmeDDtO4RF+tN+LUzVLBa/vm24xc5rxzSNo1VBdw==",
+      "path": "system.memory/4.4.0-preview2-25405-01",
+      "hashPath": "system.memory.4.4.0-preview2-25405-01.nupkg.sha512"
     },
     "System.Net.Http/4.3.0": {
       "type": "package",
