@@ -153,49 +153,49 @@ namespace Library.Controllers
             return _context.LibraryAssets.Any(e => e.Id == id);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Upload(FileUploadViewModel model)
-        {
-            var file = model.File;
+        //[HttpPost]
+        //public async Task<IActionResult> Upload(FileUploadViewModel model)
+        //{
+        //    var file = model.File;
 
-            //string filer = model.File;
-            //string realFileName = "/images/" + file; 
-            //string PathDB = string.Empty;
+        //    //string filer = model.File;
+        //    //string realFileName = "/images/" + file; 
+        //    //string PathDB = string.Empty;
 
 
-            if (file.Length > 0)
-            {
-                string path = Path.Combine(_env.WebRootPath, "images");
+        //    if (file.Length > 0)
+        //    {
+        //        string path = Path.Combine(_env.WebRootPath, "images");
 
-                using (var fs = new FileStream(Path.Combine(path, file.FileName), FileMode.Create))
-                {
-                    await file.CopyToAsync(fs);
+        //        using (var fs = new FileStream(Path.Combine(path, file.FileName), FileMode.Create))
+        //        {
+        //            await file.CopyToAsync(fs);
 
-                    System.Console.WriteLine(fs);
-                }
+        //            System.Console.WriteLine(fs);
+        //        }
 
-                using (var img = Image.Load(Path.Combine(path, file.FileName)))
-                {
-                    //file.FileName = "/images/" + file.FileName;
-                    //file.FileName += "/images/" + file.FileName;
-                    //string add = "/images/";
-                    //model.File = model.Source;
-                    model.Source = $"/images/{file.FileName}";
-                    model.Extension = Path.GetExtension(file.FileName).Substring(1);
-                    //PathDB = "/images/" + file.FileName;
-                    model.Width = img.Width;
-                    model.Height = img.Height;
-                    model.Size = file.Length / 1000; // kb
+        //        using (var img = Image.Load(Path.Combine(path, file.FileName)))
+        //        {
+        //            //file.FileName = "/images/" + file.FileName;
+        //            //file.FileName += "/images/" + file.FileName;
+        //            //string add = "/images/";
+        //            //model.File = model.Source;
+        //            model.Source = $"/images/{file.FileName}";
+        //            model.Extension = Path.GetExtension(file.FileName).Substring(1);
+        //            //PathDB = "/images/" + file.FileName;
+        //            model.Width = img.Width;
+        //            model.Height = img.Height;
+        //            model.Size = file.Length / 1000; // kb
 
-                    return Ok(model);
-                }
+        //            return Ok(model);
+        //        }
 
                 
 
-            }
+        //    }
 
-            return BadRequest();
-        }
+        //    return BadRequest();
+        //}
 
 
 

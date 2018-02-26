@@ -54,13 +54,13 @@ namespace Library.Controllers
                     assetModels = assetModels.OrderBy(s => s.Id);
                     break;
             }
-            
+           
 
             var listingResult = assetModels
                 .Select(a => new AssetIndexListingModel
                 {
                     Id = a.Id,
-                    ImageUrl = "/images/"+a.ImageUrl,
+                    ImageUrl = "/images/" + a.ImageUrl,
                     AuthorOrDirector = _assets.GetAuthorOrDirector(a.Id),
                     Title = a.Title,
                     ISBN = _assets.GetIsbn(a.Id)
@@ -84,7 +84,7 @@ namespace Library.Controllers
                 Title = asset.Title,
                 Year = asset.Year,
                 Cost = asset.Cost,
-                ImageUrl = "/images/"+asset.ImageUrl,
+                ImageUrl = "/images/"+ asset.ImageUrl,
                 AuthorOrDirector = _assets.GetAuthorOrDirector(id), // use Asset Service to get AuthorOrDirector
                 DeweyCallNumber = _assets.GetDeweyIndex(id),  // use Asset Service to get GetDeweyIndex
                 ISBN = _assets.GetIsbn(id), // use Asset Service to get ISBN

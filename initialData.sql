@@ -17,12 +17,12 @@ Patrons([Address], DateOfBirth, FirstName, HomeLibraryBranchId, LastName, Teleph
 ('5654 Loki St. Providence, RI 02909', 		'1978-11-23', 'Natalie', 	1, 'Portman', 	'401-555-7894'),
 ('1352 Starlord Ct. Providence, RI 02909', 	'1981-10-16', 'Halle', 		2, 'Berry', 	'401-555-4568'),
 ('1111 Rocket Ct. Providence, RI 02909', 	'1954-10-16', 'Jackie', 	3, 'Chan', 	'401-555-4561'),
-('1111 Rocket Ct. Providence, RI 02909', 	'1954-10-16', 'Jet', 		1, 'Li', 	'401-555-1562'),
-('1111 Rocket Ct. Providence, RI 02909', 	'1954-10-16', 'Donnie', 	2, 'Yen', 	'401-555-2563'),
-('1111 Rocket Ct. Providence, RI 02909', 	'1954-10-16', 'Josh', 		3, 'Brolin', 	'401-555-4364'),
-('1111 Rocket Ct. Providence, RI 02909', 	'1954-10-16', 'Scarlett', 	1, 'Johansson', '401-555-4465'),
-('1111 Rocket Ct. Providence, RI 02909', 	'1954-10-16', 'Chris', 		2, 'Pratt', 	'401-555-7566'),
-('1111 Rocket Ct. Providence, RI 02909', 	'1954-10-16', 'Zoe', 		3, 'Saldana', 	'401-555-8567')
+('1111 Planter St. Providence, RI 02909', 	'1954-10-16', 'Jet', 		1, 'Li', 	'401-555-1562'),
+('1111 Thanos Dr. Providence, RI 02909', 	'1954-10-16', 'Donnie', 	2, 'Yen', 	'401-555-2563'),
+('1111 Silver Ct. Providence, RI 02909', 	'1954-10-16', 'Josh', 		3, 'Brolin', 	'401-555-4364'),
+('1111 Surfer Blvd. Providence, RI 02909', 	'1954-10-16', 'Scarlett', 	1, 'Johansson', '401-555-4465'),
+('1111 Galactus Ct. Providence, RI 02909', 	'1954-10-16', 'Chris', 		2, 'Pratt', 	'401-555-7566'),
+('1111 Home St. Providence, RI 02909', 		'1954-10-16', 'Zoe', 		3, 'Saldana', 	'401-555-8567')
 SELECT * FROM Patrons
 
 INSERT INTO LibraryAssets
@@ -35,14 +35,14 @@ INSERT INTO LibraryAssets
 (15.99, 3,  'Mark Twain', 		'837.789', '9783457612345', 'Huckleberry Finn', 1922, 'huckleberry.png', 1),
 (16.99, 1,  'Lewis Carroll', 		'838.901', '9787897668891', 'Alice in Wonderland', 1935, 'alice.png', 1),
 (17.00, 2,  'Ralph Ellison', 		'839.001', '9783457345611', 'Invisible Man', 1915, 'invisible.png', 1),
-(18.99, 3,  'William Golding', 	'840.002', '9787897624466', 'Lord of the Flies', 1905, 'lordflies.png', 1),
+(18.99, 3,  'William Golding', 		'840.002', '9787897624466', 'Lord of the Flies', 1905, 'lordflies.png', 1),
 (25.99, 1,  'Mary Shelley', 		'841.333', '9783457629933', 'Frankenstein', 1925, 'frankenstein.png', 1),
 (15.99, 2,  'J. R. R. Tolkien', 	'842.421', '9789997622790', 'The Lord of the Rings', 1965, 'lotr.png', 1),
 (10.99, 3,  'E. B. White', 		'843.768', '9782347624321', 'Charlottes Web', 1975, 'charlottes.png', 1),
-(15.99, 1,  'Alexandre Dumas', 	'844.990', '9785678905693', 'The Count of Monte Cristo', 1905, 'montecristo.png', 1),
+(15.99, 1,  'Alexandre Dumas', 		'844.990', '9785678905693', 'The Count of Monte Cristo', 1905, 'montecristo.png', 1),
 (15.99, 2,  'Robert Louis Stevenson',	'845.439', '9786787129934', 'Dr. Jekyll and Mr. Hyde', 1955, 'jekyll.png', 1),
 (25.99, 3,  'J. K. Rowling', 		'846.123', '9788907230011', 'Harry Potter', 1995, 'potter.png', 1),
 (18.00, 1,  'Arthur Conan Doyle', 	'847.560', '9781237568902', 'Sherlock Holmes', 1965, 'holmes.png', 1),
 (21.99, 2,  'Frank Herbert', 		'848.345', '9784537345678', 'Dune', 1945, 'dune.png', 1),
-(23.99, 3,  'Alexandre Dumas', 	'849.123', '9787657787965', 'The Three Musketeers', 1945, 'three.png', 1);
+(23.99, 3,  'Alexandre Dumas', 		'849.123', '9787657787965', 'The Three Musketeers', 1945, 'three.png', 1);
 SELECT * FROM LibraryAssets
