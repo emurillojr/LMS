@@ -1,0 +1,15 @@
+﻿@model Tyler_MVC.ViewModels.Home.ShowLanguagesViewModel
+
+@{
+    ViewBag.Title = "ShowLanguages";
+}
+
+<h2>ShowLanguages</h2>
+<div class="row">
+    <div class="col-xs-6">
+        @Html.ListBox("lang", Model.CulturesList)
+    </div>
+    <div class="col-xs-6">
+        @Html.DropDownList("lang2", Model.CulturesList)
+    </div>
+</div>
