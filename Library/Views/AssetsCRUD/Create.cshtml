@@ -1,7 +1,7 @@
 ﻿@model Library.Models.Asset
 
 @section Scripts{
-    
+
     @*<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>*@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
@@ -21,7 +21,7 @@
         <div class="col-sm-5">
             <div class="form-group">
                 <label asp-for="Title" class="control-label">Title</label>
-                <input asp-for="Title" class="form-control" maxlength="50"/>
+                <input asp-for="Title" class="form-control" maxlength="50" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -35,18 +35,18 @@
                 <span asp-validation-for="Cost" class="text-danger"></span>
             </div>
             @*<div class="form-group">
-            <label asp-for="ImageUrl" class="control-label">Image</label>
-            <input asp-for="ImageUrl" class="form-control" type="file" />
-            <span asp-validation-for="ImageUrl" class="text-danger"></span>
-            </div>*@
+                <label asp-for="ImageUrl" class="control-label">Image</label>
+                <input asp-for="ImageUrl" class="form-control" type="file" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                </div>*@
             <div class="form-group">
                 <label asp-for="ImageUrl" class="control-label">Image</label>
-                <input asp-for="ImageUrl" class="form-control" readonly value="/images/default.png" />
+                <input asp-for="ImageUrl" class="form-control" readonly value="default.png" />
                 <span asp-validation-for="ImageUrl" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="NumberOfCopies" class="control-label"># of Copies</label>
-                <input asp-for="NumberOfCopies" class="form-control" min="1" max="100"/>
+                <input asp-for="NumberOfCopies" class="form-control" min="1" max="100" />
                 <span asp-validation-for="NumberOfCopies" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -64,45 +64,75 @@
                 <input asp-for="DeweyIndex" class="form-control" placeholder="123.456" maxlength="7" />
                 <span asp-validation-for="DeweyIndex" class="text-danger"></span>
             </div>
+            @*<div class="form-group">
+                    <label asp-for="LocationId" class="control-label">Location Code</label>
+                    <input asp-for="LocationId" class="form-control" min="1" max="3" placeholder="1 for Providence, 2 for Fox Point, 3 for Washington Park" />
+                    <span asp-validation-for="LocationId" class="text-danger"></span>
+                </div>*@
+
             <div class="form-group">
-                <label asp-for="LocationId" class="control-label">Location Code</label>
-                <input asp-for="LocationId" class="form-control" min="1" max="3" placeholder="1 for Providence, 2 for Fox Point, 3 for Washington Park" />
-                <span asp-validation-for="LocationId" class="text-danger"></span>
+                @Html.LabelFor(model => model.LocationId, "Location", htmlAttributes: new { @class = "control-label" })
+
+                @{
+                    List<SelectListItem> listItems = new List<SelectListItem>();
+                    listItems.Add(new SelectListItem
+                    {
+                        Text = "Providence Downtown Branch",
+                        Value = "1"
+                    });
+                    listItems.Add(new SelectListItem
+                    {
+                        Text = "Fox Point Branch",
+                        Value = "2",
+                    });
+                    listItems.Add(new SelectListItem
+                    {
+                        Text = "Washington Park Branch",
+                        Value = "3",
+                    });
+
+                }
+
+                @Html.DropDownListFor(model => model.LocationId, listItems, "Branch", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.LocationId, "", new { @class = "text-danger" })
+
             </div>
+
+
 
 
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 
             @*<script>
-                $(document).ready(function () {
+                    $(document).ready(function () {
 
-                    let onchange = function () {
-                        let _this = $(this)[0];
+                        let onchange = function () {
+                            let _this = $(this)[0];
 
-                        let f = new FormData();
-                        f.append('File', _this.files[0]);
+                            let f = new FormData();
+                            f.append('File', _this.files[0]);
 
-                        let onSuccess = function (model) {
-                            //console.log(model);
+                            let onSuccess = function (model) {
+                                //console.log(model);
+                            };
+
+                            $.ajax({
+                                method: 'post',
+                                url: '/assetscrud/upload',
+                                data: f,
+                                processData: false,
+                                contentType: false,
+                                traditional: true
+                            }).done(onSuccess);
+
                         };
 
-                        $.ajax({
-                            method: 'post',
-                            url: '/assetscrud/upload',
-                            data: f,
-                            processData: false,
-                            contentType: false,
-                            traditional: true
-                        }).done(onSuccess);
 
-                    };
+                        $(document).on('change', 'input[type=file]', onchange);
 
-
-                    $(document).on('change', 'input[type=file]', onchange);
-
-                });
-            </script>*@
+                    });
+                </script>*@
 
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-lg btn-success" />

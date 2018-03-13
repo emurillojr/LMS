@@ -58,6 +58,7 @@ namespace Library.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id, Title, Year, Cost, ImageUrl, NumberOfCopies, ISBN, Author, DeweyIndex, LocationId")] Asset libraryAsset)
         {
+            
             if (ModelState.IsValid)
             {
                 _context.Add(libraryAsset);

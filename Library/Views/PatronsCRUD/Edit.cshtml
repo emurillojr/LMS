@@ -12,7 +12,7 @@
 
 <div class="container">
     <div class="header clearfix detailHeading">
-        <h2 class="text-muted">Edit Asset Information</h2>
+        <h2 class="text-muted">Edit Patron Information</h2>
         <a asp-controller="Patron" asp-action="Detail" asp-route-id="@Model.Id"><i class="fas fa-arrow-circle-left fa-3x" style="color:black"></i></a>
     </div>
     <form asp-action="Edit">
@@ -21,12 +21,12 @@
         <div class="col-sm-5">
             <div class="form-group">
                 <label asp-for="FirstName" class="control-label">First Name</label>
-                <input asp-for="FirstName" class="form-control" maxlength="15"/>
+                <input asp-for="FirstName" class="form-control" maxlength="15" />
                 <span asp-validation-for="FirstName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="LastName" class="control-label">Last Name</label>
-                <input asp-for="LastName" class="form-control"  maxlength="25"/>
+                <input asp-for="LastName" class="form-control" maxlength="25" />
                 <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -41,14 +41,43 @@
             </div>
             <div class="form-group">
                 <label asp-for="TelephoneNumber" class="control-label">Phone Number</label>
-                <input asp-for="TelephoneNumber" class="form-control" maxlength="12"/>
+                <input asp-for="TelephoneNumber" class="form-control" maxlength="12" />
                 <span asp-validation-for="TelephoneNumber" class="text-danger"></span>
             </div>
+            @*<div class="form-group">
+            <label asp-for="HomeLibraryBranchId" class="control-label">Home Library Branch Code</label>
+            <input asp-for="HomeLibraryBranchId" class="form-control" min="1" max="3" />
+            <span asp-validation-for="HomeLibraryBranchId" class="text-danger"></span>
+        </div>*@
+
             <div class="form-group">
-                <label asp-for="HomeLibraryBranchId" class="control-label">Home Library Branch Code</label>
-                <input asp-for="HomeLibraryBranchId" class="form-control" min="1" max="3" />
-                <span asp-validation-for="HomeLibraryBranchId" class="text-danger"></span>
+                @Html.LabelFor(model => model.HomeLibraryBranchId, "Home Library Branch", htmlAttributes: new { @class = "control-label" })
+
+                @{
+            List<SelectListItem> listItems = new List<SelectListItem>();
+            listItems.Add(new SelectListItem
+            {
+                Text = "Providence Downtown Branch",
+                Value = "1"
+            });
+            listItems.Add(new SelectListItem
+            {
+                Text = "Fox Point Branch",
+                Value = "2",
+            });
+            listItems.Add(new SelectListItem
+            {
+                Text = "Washington Park Branch",
+                Value = "3",
+            });
+
+                }
+
+                @Html.DropDownListFor(model => model.HomeLibraryBranchId, listItems, "Branch", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.HomeLibraryBranchId, "", new { @class = "text-danger" })
+
             </div>
+
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-lg btn-success" />
             </div>

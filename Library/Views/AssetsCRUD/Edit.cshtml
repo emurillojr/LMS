@@ -21,12 +21,12 @@
         <div class="col-sm-5">
             <div class="form-group">
                 <label asp-for="Title" class="control-label">Title</label>
-                <input asp-for="Title" class="form-control" maxlength="50"/>
+                <input asp-for="Title" class="form-control" maxlength="50" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Year" class="control-label">Year</label>
-                <input asp-for="Year" class="form-control" min="1500" max="2018"/>
+                <input asp-for="Year" class="form-control" min="1500" max="2018" />
                 <span asp-validation-for="Year" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -41,12 +41,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="NumberOfCopies" class="control-label"># of Copies</label>
-                <input asp-for="NumberOfCopies" class="form-control" min="1" max="100"/>
+                <input asp-for="NumberOfCopies" class="form-control" min="1" max="100" />
                 <span asp-validation-for="NumberOfCopies" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ISBN" class="control-label">ISBN</label>
-                <input asp-for="ISBN" class="form-control" maxlength="13"/>
+                <input asp-for="ISBN" class="form-control" maxlength="13" />
                 <span asp-validation-for="ISBN" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -56,14 +56,43 @@
             </div>
             <div class="form-group">
                 <label asp-for="DeweyIndex" class="control-label">Dewey Index</label>
-                <input asp-for="DeweyIndex" class="form-control" maxlength="7"/>
+                <input asp-for="DeweyIndex" class="form-control" maxlength="7" />
                 <span asp-validation-for="DeweyIndex" class="text-danger"></span>
             </div>
+            @*<div class="form-group">
+            <label asp-for="LocationId" class="control-label">Location Code</label>
+            <input asp-for="LocationId" class="form-control" min="1" max="3" />
+            <span asp-validation-for="LocationId" class="text-danger"></span>
+        </div>*@
+
             <div class="form-group">
-                <label asp-for="LocationId" class="control-label">Location Code</label>
-                <input asp-for="LocationId" class="form-control" min="1" max="3" />
-                <span asp-validation-for="LocationId" class="text-danger"></span>
+                @Html.LabelFor(model => model.LocationId, "Location", htmlAttributes: new { @class = "control-label" })
+
+                @{
+            List<SelectListItem> listItems = new List<SelectListItem>();
+            listItems.Add(new SelectListItem
+            {
+                Text = "Providence Downtown Branch",
+                Value = "1"
+            });
+            listItems.Add(new SelectListItem
+            {
+                Text = "Fox Point Branch",
+                Value = "2",
+            });
+            listItems.Add(new SelectListItem
+            {
+                Text = "Washington Park Branch",
+                Value = "3",
+            });
+
+                }
+
+                @Html.DropDownListFor(model => model.LocationId, listItems, "Branch", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.LocationId, "", new { @class = "text-danger" })
+
             </div>
+
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-lg btn-success" />
             </div>
